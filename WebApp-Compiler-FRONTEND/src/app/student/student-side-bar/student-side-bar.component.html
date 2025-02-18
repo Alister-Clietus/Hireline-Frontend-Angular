@@ -1,0 +1,74 @@
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+<!-- SIDE BAR STARTS HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sidebar" [ngClass]="{'open': isSidebarOpen}">
+    <div class="logo-details">
+      <i class='bx bx-menu' style='color:#252323'  ></i>      
+      <div class="logo_name">Hireline</div>
+      <i class='bx bx-menu' style='color:#252323' (click)="toggleSidebar()" id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search'></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a (click)="studentDetails()">
+         <i class='bx bxs-user-detail'></i>
+          <span class="links_name">My Profile</span>
+        </a>
+        <span class="tooltip">My Profile</span>
+      </li>
+      <li>
+       <a (click)="jobAlerts()">
+        <i class='bx bx-briefcase-alt'></i>
+         <span class="links_name">Job Alerts</span>
+       </a>
+       <span class="tooltip">Job Alerts</span>
+     </li>
+     <li>
+       <a (click)="resumeChecker()">
+         <i class='bx bx-pie-chart-alt-2'></i>
+         <span class="links_name">Check Resume</span>
+       </a>
+       <span class="tooltip">Check Resume</span>
+     </li>
+     <li>
+      <a (click)="companyDetails()">
+        <i class='bx bx-pie-chart-alt-2'></i>
+        <span class="links_name">Company Details</span>
+      </a>
+      <span class="tooltip">Company Details</span>
+    </li>
+     <li>
+       <a  (click)="takeTestFromStudentPortal()">
+         <i class='bx bx-desktop'></i>
+         <span class="links_name">Take Test</span>
+       </a>
+       <span class="tooltip">Take Test</span>
+     </li>
+     <li>
+        <a (click)="listChamptions()">
+          <i class='bx bx-run'></i>         
+          <span class="links_name">Champions</span>
+        </a>
+        <span class="tooltip">Champions</span>
+      </li>
+     <li>
+       <a (click)="openSettings()">
+         <i class='bx bx-cog'></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li>
+        <a (click)="logout()">
+          <i class='bx bx-log-out'></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+      </li>
+    </ul>
+</div>
+<!-- SIDE BAR ENDS HERE ************************************************************************ -->

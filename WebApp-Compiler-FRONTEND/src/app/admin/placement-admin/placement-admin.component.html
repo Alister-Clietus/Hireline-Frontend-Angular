@@ -1,0 +1,35 @@
+<app-placement-sidebar></app-placement-sidebar>
+<div class="header" (click)="toggleJobs()">
+    <span class="pageHeading1">Verified Jobs</span>
+    <span class="toggle-arrow" [class.rotate-arrow]="showJobs">&#9654;</span>
+</div>
+<div class="verifiedjob" *ngIf="showJobs">
+    <div class="jobbox" *ngFor="let job of jobs">
+        <h2 class="job-title">{{ job.title }}</h2>
+        <p class="job-description">{{ job.description }}</p>
+        <a [href]="job.companyLink" class="company-link" target="_blank">Visit Company</a>
+        <div class="buttons">
+            <button class="btn apply-btn">Apply</button>
+            <button class="btn verify-btn">Verify</button>
+            <button class="btn publish-btn">Publish</button>
+        </div>
+    </div>
+</div>
+
+<div class="header" (click)="toggleJobsunverified()">
+    <span class="pageHeading1">Unverified Jobs</span>
+    <span class="toggle-arrow" [class.rotate-arrow]="showJobs">&#9654;</span>
+</div>
+<div class="verifiedjob" *ngIf="showJobs2">
+    <div class="jobbox" *ngFor="let job of jobs">
+        <h2 class="job-title">{{ job.title }}</h2>
+        <p class="job-description">{{ job.description }}</p>
+        <a [href]="job.companyLink" class="company-link" target="_blank">Visit Company</a>
+        <div class="buttons">
+            <button class="btn apply-btn">Apply</button>
+            <button class="btn verify-btn">Verify</button>
+            <button class="btn publish-btn">Publish</button>
+        </div>
+    </div>
+</div>
+

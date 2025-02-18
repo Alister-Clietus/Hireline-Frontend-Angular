@@ -1,0 +1,247 @@
+<div class="container">
+    <h2>Signup Page for Student Portal</h2>
+
+    <div class="row">
+        <div class="column">
+            <h3>Personal Details</h3>
+            <label for="firstname">First Name:</label>
+            <span class="error-msg-span">{{validationMessage.firstName}}</span>
+            <input type="text" id="firstname" [(ngModel)]="studentportaldto.firstName">
+
+            <label for="lastname">Last Name:</label>
+            <span class="error-msg-span">{{validationMessage.lastName}}</span>
+            <input type="text" id="lastname" [(ngModel)]="studentportaldto.lastName">
+
+            <label for="phoneNumber">Phone Number:</label>
+            <span class="error-msg-span">{{validationMessage.phoneNumber}}</span>
+            <input type="text" id="phoneNumber" [(ngModel)]="studentportaldto.phoneNumber">
+        </div>
+        <div class="column">
+            <h3>Personal Details</h3>
+            <label for="gender">Gender:</label>
+            <span class="error-msg-span">{{validationMessage.gender}}</span>
+            <input type="text" id="gender" [(ngModel)]="studentportaldto.gender">
+
+            <label for="collegename">College Name:</label>
+            <span class="error-msg-span">{{validationMessage.collegename}}</span>
+            <input type="text" id="collegename" [(ngModel)]="studentportaldto.collegename">
+
+            <label for="pincode">Pincode:</label>
+            <span class="error-msg-span">{{validationMessage.pincode}}</span>
+            <input type="text" id="pincode" [(ngModel)]="studentportaldto.pincode">
+        </div>
+        <div class="column">
+            <h3>Current College Details</h3>
+            <label for="currentSemester">Current Semester:</label>
+            <span class="error-msg-span">{{validationMessage.currentSemester}}</span>
+            <input type="text" id="currentSemester" [(ngModel)]="studentportaldto.currentSemester">
+
+            <label for="currentCgpa">Current CGPA:</label>
+            <span class="error-msg-span">{{validationMessage.currentCgpa}}</span>
+            <input type="number" id="currentCgpa" [(ngModel)]="studentportaldto.currentCgpa">
+
+            <label for="ktuId">KTU ID:</label>
+            <span class="error-msg-span">{{validationMessage.ktuId}}</span>
+            <input type="text" id="ktuId" [(ngModel)]="studentportaldto.ktuId">
+        </div>
+        <div class="column">
+            <h3>Authentication Details</h3>
+            <label for="email">Email ID:</label>
+            <span class="error-msg-span">{{validationMessage.email}}</span>
+            <input type="email" id="email" [(ngModel)]="studentportaldto.email">
+
+            <label for="password">Password:</label>
+            <span class="error-msg-span">{{validationMessage.password}}</span>
+            <input type="password" id="password" [(ngModel)]="studentportaldto.password">
+
+            <label for="password">Password:</label>
+            <span class="error-msg-span">{{validationMessage.password}}</span>
+            <input type="password" id="password" [(ngModel)]="studentportaldto.password">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h3>Education: High School</h3>
+            <label for="highSchoolCourse">Course:</label>
+            <span class="error-msg-span">{{validationMessage.highSchoolCourse}}</span>
+            <input type="text" id="highSchoolCourse" [(ngModel)]="studentportaldto.highSchoolCourse">
+
+            <label for="highSchoolCollege">College Name:</label>
+            <span class="error-msg-span">{{validationMessage.highSchoolCollege}}</span>
+            <input type="text" id="highSchoolCollege" [(ngModel)]="studentportaldto.highSchoolCollege">
+
+            <label for="highSchoolGraduationYear">Graduation Year:</label>
+            <span class="error-msg-span">{{validationMessage.highSchoolGraduationYear}}</span>
+            <input type="number" id="highSchoolGraduationYear" [(ngModel)]="studentportaldto.highSchoolGraduationYear">
+        </div>
+        <div class="column">
+            <h3>Education: Higher Secondary</h3>
+            <label for="higherSecondaryCourse">Course:</label>
+            <span class="error-msg-span">{{validationMessage.higherSecondaryCourse}}</span>
+            <input type="text" id="higherSecondaryCourse" [(ngModel)]="studentportaldto.higherSecondaryCourse">
+
+            <label for="higherSecondaryCollege">College Name:</label>
+            <span class="error-msg-span">{{validationMessage.higherSecondaryCollege}}</span>
+            <input type="text" id="higherSecondaryCollege" [(ngModel)]="studentportaldto.higherSecondaryCollege">
+
+            <label for="higherSecondaryGraduationYear">Graduation Year:</label>
+            <span class="error-msg-span">{{validationMessage.higherSecondaryGraduationYear}}</span>
+            <input type="number" id="higherSecondaryGraduationYear" [(ngModel)]="studentportaldto.higherSecondaryGraduationYear">
+        </div>
+        <div class="column">
+            <h3>Education: Graduation</h3>
+            <label for="graduationDegree">Degree:</label>
+            <span class="error-msg-span">{{validationMessage.graduationDegree}}</span>
+            <input type="text" id="graduationDegree" [(ngModel)]="studentportaldto.graduationDegree">
+
+            <label for="graduationCollege">College Name:</label>
+            <span class="error-msg-span">{{validationMessage.graduationCollege}}</span>
+            <input type="text" id="graduationCollege" [(ngModel)]="studentportaldto.graduationCollege">
+
+            <label for="graduationGraduationYear">Graduation Year:</label>
+            <span class="error-msg-span">{{validationMessage.graduationGraduationYear}}</span>
+            <input type="text" id="graduationGraduationYear" [(ngModel)]="studentportaldto.graduationGraduationYear">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h3>Personal Project</h3>
+            <label for="degree">Project Name:</label>
+            <span class="error-msg-span">{{validationMessage.personalProjectName}}</span>
+            <input type="text" id="degree" [(ngModel)]="studentportaldto.personalProjectName">
+            
+            <label for="college">Stack Used:</label>
+            <span class="error-msg-span">{{validationMessage.personalProjectStack}}</span>
+            <input type="text" id="college" [(ngModel)]="studentportaldto.personalProjectStack">
+            
+            <label for="grad-year">Year:</label>
+            <span class="error-msg-span">{{validationMessage.personalProjectYear}}</span>
+            <input type="text" id="grad-year" [(ngModel)]="studentportaldto.personalProjectYear">
+        </div>
+        <div class="column">
+            
+            <h3>Mini Project</h3>
+            <label for="miniProjectName">Project Name:</label>
+            <span class="error-msg-span">{{validationMessage.miniProjectName}}</span>
+            <input type="text" id="miniProjectName" [(ngModel)]="studentportaldto.miniProjectName">
+
+            <label for="miniProjectStack">Stack Used:</label>
+            <span class="error-msg-span">{{validationMessage.miniProjectStack}}</span>
+            <input type="text" id="miniProjectStack" [(ngModel)]="studentportaldto.miniProjectStack">
+
+            <label for="miniProjectYear">Year:</label>
+            <span class="error-msg-span">{{validationMessage.miniProjectYear}}</span>
+            <input type="text" id="miniProjectYear" [(ngModel)]="studentportaldto.miniProjectYear">
+        </div>
+        <div class="column">
+            <h3>Main Project</h3>
+            <label for="mainProjectName">Project Name:</label>
+            <span class="error-msg-span">{{validationMessage.mainProjectName}}</span>
+            <input type="text" id="mainProjectName" [(ngModel)]="studentportaldto.mainProjectName">
+
+            <label for="mainProjectStack">Stack Used:</label>
+            <span class="error-msg-span">{{validationMessage.mainProjectStack}}</span>
+            <input type="text" id="mainProjectStack" [(ngModel)]="studentportaldto.mainProjectStack">
+
+            <label for="mainProjectYear">Year:</label>
+            <span class="error-msg-span">{{validationMessage.mainProjectYear}}</span>
+            <input type="text" id="mainProjectYear" [(ngModel)]="studentportaldto.mainProjectYear">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h3>Languages Known</h3>
+            <label for="language1">Language 1</label>
+            <span class="error-msg-span">{{validationMessage.languagesKnown1}}</span>
+            <input type="text" id="language1" [(ngModel)]="studentportaldto.languagesKnown1">
+            
+            <label for="language2">Language 2</label>
+            <span class="error-msg-span">{{validationMessage.languagesKnown2}}</span>
+            <input type="text" id="language2" [(ngModel)]="studentportaldto.languagesKnown2">
+            
+            <label for="language3">Language 3</label>
+            <span class="error-msg-span">{{validationMessage.languagesKnown3}}</span>
+            <input type="text" id="language3" [(ngModel)]="studentportaldto.languagesKnown3">
+        </div>
+        <div class="column">
+            <h3>Frameworks Known</h3>
+            <label for="achievements3">Framework 1</label>
+            <span class="error-msg-span">{{validationMessage.frameworksKnown1}}</span>
+            <input type="text" id="frameworksKnown1" [(ngModel)]="studentportaldto.frameworksKnown1">
+            <label for="achievements3">Framework 2</label>
+            <span class="error-msg-span">{{validationMessage.frameworksKnown2}}</span>
+            <input type="text" id="frameworksKnown2" [(ngModel)]="studentportaldto.frameworksKnown2">
+            <label for="achievements3">Framework 3</label>
+            <span class="error-msg-span">{{validationMessage.frameworksKnown3}}</span>
+            <input type="text" id="frameworksKnown3" [(ngModel)]="studentportaldto.frameworksKnown3">
+        </div>
+        <div class="column">
+            <h3>Programming Languages</h3>
+            <label for="achievements3">Programming Language 1</label>
+            <span class="error-msg-span">{{validationMessage.programmingLanguages1}}</span>
+            <input type="text" id="programmingLanguages1" [(ngModel)]="studentportaldto.programmingLanguages1">
+            <label for="achievements3">Programming Language 2</label>
+            <span class="error-msg-span">{{validationMessage.programmingLanguages2}}</span>
+            <input type="text" id="programmingLanguages2" [(ngModel)]="studentportaldto.programmingLanguages2">
+            <label for="achievements3">Programming Language 3</label>
+            <span class="error-msg-span">{{validationMessage.programmingLanguages3}}</span>
+            <input type="text" id="programmingLanguages3" [(ngModel)]="studentportaldto.programmingLanguages3">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h3>Hobbies</h3>
+            <label for="achievements3">Hobbies 1</label>
+            <span class="error-msg-span">{{validationMessage.hobbies1}}</span>
+            <input type="text" id="hobbies1" [(ngModel)]="studentportaldto.hobbies1">
+            <label for="achievements3">Hobbies 2</label>
+            <span class="error-msg-span">{{validationMessage.hobbies2}}</span>
+            <input type="text" id="hobbies2" [(ngModel)]="studentportaldto.hobbies2">
+            <label for="achievements3">Hobbies 3</label>
+            <span class="error-msg-span">{{validationMessage.hobbies3}}</span>
+            <input type="text" id="hobbies3" [(ngModel)]="studentportaldto.hobbies3">
+        </div>
+        <div class="column">
+            <h3>Achievements</h3>
+            <label for="achievements3">Achievement 1</label>
+            <span class="error-msg-span">{{validationMessage.achievements1}}</span>
+            <input type="text" id="achievements1" [(ngModel)]="studentportaldto.achievements1">
+            <label for="achievements3">Achievement 2</label>
+            <span class="error-msg-span">{{validationMessage.achievements2}}</span>
+            <input type="text" id="achievements2" [(ngModel)]="studentportaldto.achievements2">
+            <label for="achievements3">Achievement 3</label>
+            <span class="error-msg-span">{{validationMessage.achievements3}}</span>
+            <input type="text" id="achievements3" [(ngModel)]="studentportaldto.achievements3">
+        </div>
+        <div class="column">
+            <h3>Soft Skills</h3>
+            <label for="softskill1">Soft Skills</label>
+            <span class="error-msg-span">{{validationMessage.softSkills1}}</span>
+            <input type="text" id="softskill1" [(ngModel)]="studentportaldto.softSkills1">
+            
+            <label for="softskill2">Soft Skills</label>
+            <span class="error-msg-span">{{validationMessage.softSkills2}}</span>
+            <input type="text" id="softskill2" [(ngModel)]="studentportaldto.softSkills2">
+            
+            <label for="softskill3">Soft Skills</label>
+            <span class="error-msg-span">{{validationMessage.softSkills3}}</span>
+            <input type="text" id="softskill3" [(ngModel)]="studentportaldto.softSkills3">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column-button">
+            <button type="button" (click)="clearForm()">Clear</button>
+        </div>
+        <div class="column-button">
+            <button type="button" (click)="login()">Login</button>
+        </div>
+        <div class="column-button">
+            <button type="button" (click)="signup()">Sign Up</button>
+        </div>
+    </div>
+</div>

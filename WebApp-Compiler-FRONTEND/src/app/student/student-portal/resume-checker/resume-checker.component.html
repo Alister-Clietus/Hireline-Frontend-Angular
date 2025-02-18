@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+<app-student-side-bar></app-student-side-bar>
+<div class="header">
+    <h2 class="heading2">HIRELINE | SCORE MY RESUME</h2>
+    <span class="upload-box">
+        <input type="file" id="resumeUpload" (change)="onFileSelected($event)" accept=".pdf,.docx">
+        <label for="resumeUpload">
+            <i class="bx bx-upload"></i>
+        </label>
+    </span>
+</div>
+<div class="container">
+    <!-- Left Panel: Resume Upload & Preview -->
+    <div class="left-panel">
+        <iframe *ngIf="resumeUrl" [src]="resumeUrl" class="resume-preview"></iframe>
+    </div>
+
+    <!-- Right Panel: Resume Analysis -->
+    <div class="right-panel">
+        <h2>Resume Analysis</h2>
+
+        <!-- Resume Score -->
+        <div class="score-box">
+            <h3>Resume Score: {{ score }}%</h3>
+            <div class="progress-bar">
+                <div class="progress" [style.width.%]="score">{{ score }}%</div>
+            </div>
+        </div>
+
+        <!-- Resume Insights -->
+        <div class="insights">
+            <h3>Insights</h3>
+            <p *ngFor="let insight of insights">✔ {{ insight }}</p>
+        </div>
+
+        <!-- Improvement Suggestions -->
+        <div class="suggestions">
+            <h3>Areas of Improvement</h3>
+            <ul>
+                <li *ngFor="let suggestion of suggestions">⚠ {{ suggestion }}</li>
+            </ul>
+        </div>
+
+        <div class="resume-table">
+            <div class="columns">
+                <p>Grammer Score:{{this.score}}</p>
+            </div>
+            <div class="columns">
+                <p>Allignment Score:{{this.score}}</p>
+            </div>
+            <div class="columns">
+                <p>Keywords Score:{{this.score}}</p>
+            </div>
+            <div class="columns">
+                <p>Brevity Score:{{this.score}}</p>
+            </div>
+        </div>
+        <div class="resume-table">
+            <div class="columns">
+                <p>Skills Score: {{this.score}}</p>
+            </div>
+            <div class="columns">
+                <p>Education: {{this.score}}</p>
+            </div>
+            <div class="columns">
+                <p>About: {{this.score}}</p>
+            </div>
+            <div class="columns">
+                <p>Projects: {{this.score}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>

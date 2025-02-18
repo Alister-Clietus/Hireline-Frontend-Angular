@@ -1,0 +1,86 @@
+<app-placement-sidebar></app-placement-sidebar>
+
+<div class="settings-container">
+    <h2>Settings</h2>
+  
+    <!-- Theme Toggle -->
+    <div class="setting-item">
+      <label>Dark Mode</label>
+      <button (click)="toggleTheme()">
+        {{ theme === 'light' ? 'Enable Dark Mode' : 'Enable Light Mode' }}
+      </button>
+    </div>
+  
+    <!-- Language Selection -->
+    <div class="setting-item">
+      <label for="language">Language</label>
+      <select id="language" (change)="changeLanguage($event)">
+        <option *ngFor="let lang of languages" [value]="lang.code">
+          {{ lang.name }}
+        </option>
+      </select>
+    </div>
+  
+    <!-- Color Theme Selection -->
+    <div class="setting-item">
+      <label>Color Theme</label>
+      <div class="color-options">
+        <button *ngFor="let color of colorThemes"
+                [style.backgroundColor]="color.value"
+                (click)="changeColorScheme(color.value)">
+        </button>
+      </div>
+    </div>
+  
+    <!-- Font Size Selection -->
+    <div class="setting-item">
+      <label>Font Size: {{ fontSize }}px</label>
+      <input type="range" min="12" max="24" [value]="fontSize" (input)="changeFontSize($event)">
+    </div>
+  
+    <!-- Font Family Selection -->
+    <div class="setting-item">
+      <label>Font Family</label>
+      <select (change)="changeFontFamily($event)">
+        <option *ngFor="let font of fontFamilies" [value]="font.value">
+          {{ font.name }}
+        </option>
+      </select>
+    </div>
+  
+    <!-- Notifications -->
+    <div class="setting-item">
+      <label>Enable Notifications</label>
+      <input type="checkbox" [(ngModel)]="notificationsEnabled">
+    </div>
+  
+    <!-- Privacy -->
+    <div class="setting-item">
+      <label>Profile Visibility</label>
+      <button (click)="togglePrivacy()">
+        {{ privacyPublic ? 'Public' : 'Private' }}
+      </button>
+    </div>
+  
+    <!-- Date & Time Settings -->
+    <div class="setting-item">
+      <label>Time Zone</label>
+      <select [(ngModel)]="timeZone">
+        <option *ngFor="let tz of timeZones" [value]="tz">{{ tz }}</option>
+      </select>
+    </div>
+  
+    <div class="setting-item">
+      <label>Date Format</label>
+      <select [(ngModel)]="dateFormat">
+        <option *ngFor="let df of dateFormats" [value]="df">{{ df }}</option>
+      </select>
+    </div>
+  
+    <!-- Auto Logout -->
+    <div class="setting-item">
+      <label>Auto Logout (minutes)</label>
+      <input type="number" [(ngModel)]="autoLogoutTime" min="5" max="60">
+    </div>
+  </div>
+  
