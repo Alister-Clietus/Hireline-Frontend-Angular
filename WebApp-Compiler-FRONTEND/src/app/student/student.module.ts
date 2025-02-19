@@ -22,10 +22,11 @@ import { ResumeCheckerComponent } from './student-portal/resume-checker/resume-c
 import { CompanyDetailsComponent } from './student-portal/company-details/company-details.component';
 import { DownloadComponent } from './student-portal/download/download.component';
 import { UploadComponent } from './student-portal/upload/upload.component';
+import { ChatComponent } from './student-portal/chat/chat.component';
 
 
 @NgModule({
-  declarations: [ProgrammingComponent, McqComponent, LandingComponent, ProgrammingLandingComponent, TimerComponent, HeaderComponent, SubmitpageComponent, ThankyouComponent, StudentPortalComponent, StudentSideBarComponent, ChampionComponent, JobalertsComponent, StudentDashboardComponent, ProfileDetailsComponent, SettingsComponent, ResumeCheckerComponent, CompanyDetailsComponent, DownloadComponent, UploadComponent],
+  declarations: [ProgrammingComponent, McqComponent, LandingComponent, ProgrammingLandingComponent, TimerComponent, HeaderComponent, SubmitpageComponent, ThankyouComponent, StudentPortalComponent, StudentSideBarComponent, ChampionComponent, JobalertsComponent, StudentDashboardComponent, ProfileDetailsComponent, SettingsComponent, ResumeCheckerComponent, CompanyDetailsComponent, DownloadComponent, UploadComponent, ChatComponent],
   imports: [
     CommonModule,
     StudentRoutingModule,

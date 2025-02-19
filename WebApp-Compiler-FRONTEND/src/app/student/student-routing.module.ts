@@ -21,6 +21,7 @@ import { UploadComponent } from './student-portal/upload/upload.component';
 import { CompanyDetailsComponent } from './student-portal/company-details/company-details.component';
 import { DownloadComponent } from './student-portal/download/download.component';
 import { SettingsComponent } from './student-portal/settings/settings.component';
+import { ChatComponent } from './student-portal/chat/chat.component';
 
 
 
@@ -40,6 +41,7 @@ const routes: Routes = [
 {path:"settings",component:SettingsComponent},
 {path:"champion",component:ChampionComponent},
 {path:"jobalerts",component:JobalertsComponent},
+{path:"chat",component:ChatComponent},
 {path:"download",component:DownloadComponent},
 {path:"upload",component:UploadComponent},
 {path:"companey-details",component:CompanyDetailsComponent}

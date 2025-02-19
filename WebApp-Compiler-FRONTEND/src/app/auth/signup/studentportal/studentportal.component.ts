@@ -45,7 +45,7 @@ throw new Error('Method not implemented.');
           title: "Added Successfully",
           iconColor: "#fff"
         })        
-        this.router.navigate(['./supadmin/landing'],{skipLocationChange:true});
+        this.router.navigate(['./auth/login'],{skipLocationChange:true});
       }
       else 
       {

@@ -16,6 +16,9 @@ import Swal from 'sweetalert2'
 
 export class StudentSideBarComponent implements OnInit 
 {
+chatFunction() {
+  this.router.navigate(['./student/chat'],{skipLocationChange:true});
+}
 
 constructor(private router: Router,private logoutt:LogoutService,private httpservice: HttpService,private tokenservice: TokenserviceService,private timer:TimerService,private visitedroutes:RouteVisitService,private fullscreenservice:FullScreenService) { }
 
