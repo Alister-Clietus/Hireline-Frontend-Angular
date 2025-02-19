@@ -1,7 +1,15 @@
+.heading
+{
+    margin-left: 10%;
+    margin-right: 11%;
+    text-align: center;
+    padding: 5px;
+}
+
 
 
 .leaderboard {
-    margin-left: 15%;
+    margin-left: 10%;
     margin-top: 45px;
     width: 80%;
     max-width: 1200px;

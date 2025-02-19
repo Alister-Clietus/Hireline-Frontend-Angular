@@ -1,2 +1,37 @@
 <app-student-side-bar></app-student-side-bar>
-<p>company-details works!</p>
+
+<div class="heading" style="background-color: grey;">
+    <h2 style="align-items: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 25px;font-style: bold;">COMPANY DETAILS</h2>
+</div>
+
+<div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>CTC (LPA)</th>
+          <th>Exam Date</th>
+          <th>Role</th>
+          <th>Eligibility</th>
+          <th>Previously Placed</th>
+          <th>Selection Process</th>
+          <th>Job Location</th>
+          <th>Bond</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of companies">
+          <td>{{ company.name }}</td>
+          <td>{{ company.ctc }}</td>
+          <td>{{ company.examDate }}</td>
+          <td>{{ company.role }}</td>
+          <td>{{ company.eligibility }}</td>
+          <td>{{ company.previousPlacements }}</td>
+          <td>{{ company.selectionProcess }}</td>
+          <td>{{ company.jobLocation }}</td>
+          <td>{{ company.bond }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

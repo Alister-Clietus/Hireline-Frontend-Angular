@@ -1,19 +1,33 @@
 <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 <app-student-side-bar></app-student-side-bar>
 <div class="header">
-    <h2 class="heading2">HIRELINE | SCORE MY RESUME</h2>
-    <span class="upload-box">
-        <input type="file" id="resumeUpload" (change)="onFileSelected($event)" accept=".pdf,.docx">
-        <label for="resumeUpload">
-            <i class="bx bx-upload"></i>
-        </label>
-    </span>
+
+    <div class="leftheader">
+        <h2 class="heading2">HIRELINE | SCORE MY RESUME</h2>
+    </div>
+
+    <div class="rightheader">
+        <div class="upload-box">
+            <button class ="button" (click)="fileInput.click()">
+                <i class="bx bx-upload"></i> Upload Resume
+            </button>
+            <input type="file" id="resumeUpload" #fileInput (change)="onFileSelected($event)" accept=".pdf,.docx" hidden>
+        </div>
+        <div class="upload-box">
+            <button class ="button" style="background-color: yellow;" (click)="clear()">
+                <i class="bx bx-upload"></i> Clear Resume
+            </button>
+        </div>
+    </div>
+    
+    
+    
 </div>
 <div class="container">
     <!-- Left Panel: Resume Upload & Preview -->
     <div class="left-panel">
-        <iframe *ngIf="resumeUrl" [src]="resumeUrl" class="resume-preview"></iframe>
-    </div>
+        <iframe [src]="resumeUrl" class="resume-preview"></iframe>
+    </div>  
 
     <!-- Right Panel: Resume Analysis -->
     <div class="right-panel">
@@ -37,36 +51,36 @@
         <div class="suggestions">
             <h3>Areas of Improvement</h3>
             <ul>
-                <li *ngFor="let suggestion of suggestions">⚠ {{ suggestion }}</li>
+                <li *ngFor="let suggestion of resumeresponsedto.suggestions">{{ suggestion }}</li>
             </ul>
         </div>
 
         <div class="resume-table">
             <div class="columns">
-                <p>Grammer Score:{{this.score}}</p>
+                <p>Grammer Score:{{this.resumeresponsedto.section_scores.Grammar_Score}}</p>
             </div>
             <div class="columns">
-                <p>Allignment Score:{{this.score}}</p>
+                <p>Allignment Score:{{this.resumeresponsedto.section_scores.Alignment_Score}}</p>
             </div>
             <div class="columns">
-                <p>Keywords Score:{{this.score}}</p>
+                <p>Keywords Score:{{this.resumeresponsedto.section_scores.Keywords_Score}}</p>
             </div>
             <div class="columns">
-                <p>Brevity Score:{{this.score}}</p>
+                <p>Brevity Score:{{this.resumeresponsedto.section_scores.Brevity_Score}}</p>
             </div>
         </div>
         <div class="resume-table">
             <div class="columns">
-                <p>Skills Score: {{this.score}}</p>
+                <p>Skills Score: {{this.resumeresponsedto.section_scores.Skills_Score}}</p>
             </div>
             <div class="columns">
-                <p>Education: {{this.score}}</p>
+                <p>Education: {{this.resumeresponsedto.section_scores.Education_Score}}</p>
             </div>
             <div class="columns">
-                <p>About: {{this.score}}</p>
+                <p>About: {{this.resumeresponsedto.section_scores.About_Score}}</p>
             </div>
             <div class="columns">
-                <p>Projects: {{this.score}}</p>
+                <p>Projects: {{this.resumeresponsedto.section_scores.Projects_Score}}</p>
             </div>
         </div>
 
