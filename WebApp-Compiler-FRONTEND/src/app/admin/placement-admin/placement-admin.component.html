@@ -5,9 +5,9 @@
 </div>
 <div class="verifiedjob" *ngIf="showJobs">
     <div class="jobbox" *ngFor="let job of jobs">
-        <h2 class="job-title">{{ job.title }}</h2>
-        <p class="job-description">{{ job.description }}</p>
-        <a [href]="job.companyLink" class="company-link" target="_blank">Visit Company</a>
+        <h2 class="job-title">{{ job.jobTitle }}</h2>
+        <p class="job-description">{{ job.jobDescription }}</p>
+        <a [href]="job.companyName" class="company-link" target="_blank">Visit Company</a>
         <div class="buttons">
             <button class="btn apply-btn">Apply</button>
             <button class="btn verify-btn">Verify</button>
@@ -22,9 +22,9 @@
 </div>
 <div class="verifiedjob" *ngIf="showJobs2">
     <div class="jobbox" *ngFor="let job of jobs">
-        <h2 class="job-title">{{ job.title }}</h2>
-        <p class="job-description">{{ job.description }}</p>
-        <a [href]="job.companyLink" class="company-link" target="_blank">Visit Company</a>
+        <h2 class="job-title">{{ job.jobTitle }}</h2>
+        <p class="job-description">{{ job.jobDescription }}</p>
+        <a [href]="job.companyName" class="company-link" target="_blank">Visit Company</a>
         <div class="buttons">
             <button class="btn apply-btn">Apply</button>
             <button class="btn verify-btn">Verify</button>

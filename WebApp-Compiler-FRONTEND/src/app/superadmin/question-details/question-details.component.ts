@@ -18,7 +18,8 @@ declare var jQuery: any;
   templateUrl: './question-details.component.html',
   styleUrls: ['./question-details.component.css']
 })
-export class QuestionDetailsComponent implements OnInit {
+export class QuestionDetailsComponent implements OnInit 
+{
 
 
   static obj: QuestionDetailsComponent;

@@ -1,0 +1,61 @@
+<app-question-sidebar></app-question-sidebar>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="rectangle">
+    
+</div>
+<div class="container">
+
+    <div class="roww">
+
+        <div class="col-md-3 col-xl-2">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h2 class="m-b-20">MCQ</h2>
+                    <h2 class="text-right"><i class="fa fa-question f-left"></i><span>{{mcqquestions}}</span></h2>
+                    <p class="m-b-0">Verified<span class="f-right">5</span></p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="col-md-3 col-xl-2">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                    <h2 class="m-b-20">Programming</h2>
+                    <h2 class="text-right"><i class="fa fa-code f-left"></i><span>{{programmingquestions}}</span></h2>
+                    <p class="m-b-0">Verified<span class="f-right">10</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 col-xl-2">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    <h2 class="m-b-20">Students</h2>
+                    <h2 class="text-right"><i class="fa fa-users f-left"></i><span>{{studentsattended}}</span></h2>
+                    <p class="m-b-0">Verified<span class="f-right">351</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 col-xl-2">
+            <div class="card bg-c-pink order-card">
+                <div class="card-block">
+                    <h2 class="m-b-20">Questionair</h2>
+                    <h2 class="text-right"><i class="fa fa-graduation-cap f-left"></i><span>{{questionair}}</span></h2>
+                    <p class="m-b-0">Questionair<span class="f-right">{{questionair}}</span></p>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+
+
+<div class="wrap">
+    <div class="search">
+       <input type="text" class="searchTerm" placeholder="What are you looking for?">
+       <button type="submit" class="searchButton">
+         <i class="fa fa-search"></i>
+      </button>
+    </div>
+</div>

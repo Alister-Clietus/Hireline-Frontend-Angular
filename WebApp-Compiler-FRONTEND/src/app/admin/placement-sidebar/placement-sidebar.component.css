@@ -142,7 +142,6 @@
   text-decoration: none;
   transition: all 0.4s ease;
   background: #11101D;
-  background-image: url("https://media0.giphy.com/media/MaThe6p8WAKbf9NDDM/giphy.gif?cid=6c09b952ccch26afnnztgoes6kx6y9ifv7neomwvf9c4gxf8&ep=v1_gifs_search&rid=giphy.gif&ct=g");
 }
 .sidebar li a:hover{
   background: #FFF;

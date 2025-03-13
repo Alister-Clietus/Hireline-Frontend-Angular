@@ -1,0 +1,55 @@
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+<!-- SIDE BAR STARTS HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sidebar" [ngClass]="{'open': isSidebarOpen}">
+    <div class="logo-details">
+      <i class='bx bx-menu' style='color:#252323'  ></i>      
+      <div class="logo_name">Hireline</div>
+      <i class='bx bx-menu' style='color:#252323' (click)="toggleSidebar()" id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a (click)="studentPortallogin()">
+          <i class='bx bxs-user-pin'></i>          
+          <span class="links_name">Student Portal</span>
+        </a>
+        <span class="tooltip">Student Portal</span>
+      </li>
+      <li>
+       <a (click)="examLogin()">
+        <i class='bx bxs-edit-alt' ></i>         
+        <span class="links_name">Exam</span>
+       </a>
+       <span class="tooltip">Exam</span>
+     </li>
+     <li>
+       <a (click)="questionnairLogin()">
+        <i class='bx bx-question-mark' ></i>        
+        <span class="links_name">Questionnair</span>
+       </a>
+       <span class="tooltip">Questionnair</span>
+     </li>
+     <li>
+      <a (click)="placmentAdminLogin()">
+        <i class='bx bxs-graduation' ></i>        
+        <span class="links_name">Placement Officer</span>
+      </a>
+      <span class="tooltip">Placement Officer</span>
+    </li>
+    <li>
+        <a (click)="adminLogin()">
+          <i class='bx bxs-user-rectangle' ></i>          
+          <span class="links_name">Admin Login</span>
+        </a>
+        <span class="tooltip">Admin Login</span>
+      </li>
+     <li>
+        <a (click)="logout()">
+          <i class='bx bx-log-out'></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+      </li>
+    </ul>
+</div>
+<!-- SIDE BAR ENDS HERE ************************************************************************ -->

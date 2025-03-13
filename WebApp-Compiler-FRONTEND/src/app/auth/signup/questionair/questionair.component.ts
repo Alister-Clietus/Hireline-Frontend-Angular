@@ -9,7 +9,8 @@ declare var $: any;
   templateUrl: './questionair.component.html',
   styleUrls: ['./questionair.component.css']
 })
-export class QuestionairComponent implements OnInit {
+export class QuestionairComponent implements OnInit 
+{
   validationMessage: any;
   regDTO: RegistrationDTO=new RegistrationDTO();
   constructor(private httpservice: HttpService,private router: Router) { }
@@ -40,7 +41,7 @@ export class QuestionairComponent implements OnInit {
           title: "Added Successfully",
           iconColor: "#fff"
         })        
-        this.router.navigate(['./supadmin/landing'],{skipLocationChange:true});
+        this.router.navigate(['./auth/login'],{skipLocationChange:true});
       }
       else 
       {

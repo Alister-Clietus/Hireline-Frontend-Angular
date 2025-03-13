@@ -1,59 +1,80 @@
+.settings-container {
+  font-family: 'Poppins', sans-serif;
+  max-width: 800px;
+  margin-left: 22%;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0.2px 2px 6px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+.row {
+  /* background-color: red; */
+  display: flex;
+}
+.rec
+{
+  height: 60px;
+}
 
-  
-  .settings-container {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 10px;
-    border-radius: 8px;
-  }
-  
-  h2 {
-    text-align: center;
-    font-size: 40px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
-  
-  .setting-item {
-    margin: 15px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  button {
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    background-color: var(--primary-color);
-    color: white;
-    transition: all 0.3s ease;
-  }
-  
-  
-  button:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-  }
-  
-  select, input[type="range"], input[type="number"] {
-    width: 150px;
-  padding: 5px;
-  border-radius: 5px;
+h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.setting-item {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  transition: 0.5s ease-in-out;
+}
+
+.setting-item:hover {
+  background: #f0f0f0;
+}
+
+button.toggle-btn {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+button.toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+select, input[type="range"], input[type="number"] {
+  width: 160px;
+  padding: 8px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  }
-  
-  .color-options {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .color-options button {
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+}
+
+.color-circle {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-circle:hover {
+  transform: scale(1.1);
+  border-color: #000;
+}

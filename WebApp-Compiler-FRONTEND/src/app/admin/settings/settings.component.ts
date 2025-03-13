@@ -6,81 +6,95 @@ import { Component } from '@angular/core';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent {
-
   theme: string = 'light';
-  fontSize: number = 16;
-  fontFamily: string = 'Arial, sans-serif';
-  selectedColor: string = '#4CAF50';
-  language: string = 'en';
-  notificationsEnabled: boolean = true;
-  privacyPublic: boolean = true;
-  timeZone: string = 'UTC';
-  dateFormat: string = 'DD-MM-YYYY';
-  autoLogoutTime: number = 15;
-
-  colorThemes = [
-    { name: 'Green', value: '#4CAF50' },
-    { name: 'Blue', value: '#2196F3' },
-    { name: 'Red', value: '#F44336' },
-    { name: 'Purple', value: '#9C27B0' }
-  ];
-
-  fontFamilies = [
-    { name: 'Arial', value: 'Arial, sans-serif' },
-    { name: 'Times New Roman', value: '"Times New Roman", serif' },
-    { name: 'Courier New', value: '"Courier New", monospace' },
-    { name: 'Verdana', value: 'Verdana, sans-serif' }
-  ];
-
   languages = [
     { code: 'en', name: 'English' },
+    { code: 'es', name: 'Spanish' },
     { code: 'fr', name: 'French' },
-    { code: 'de', name: 'German' },
-    { code: 'hi', name: 'Hindi' }
+    { code: 'de', name: 'German' }
   ];
-
-  timeZones = [
-    'UTC', 'GMT', 'PST', 'EST', 'IST', 'CST'
+  colorThemes = [
+    { name: 'Blue', value: '#007bff' },
+    { name: 'Green', value: '#28a745' },
+    { name: 'Red', value: '#dc3545' },
+    { name: 'Purple', value: '#6f42c1' }
   ];
-
-  dateFormats = [
-    'DD-MM-YYYY', 'MM-DD-YYYY', 'YYYY-MM-DD'
+  fontSize: number = 16;
+  privacyPublic: boolean = true;
+  timeZones: string[] = ['UTC', 'GMT', 'EST', 'PST', 'IST'];
+  timeZone: string = 'UTC';
+  fontFamilies = [
+    { name: 'Arial', value: 'Arial, sans-serif' },
+    { name: 'Verdana', value: 'Verdana, sans-serif' },
+    { name: 'Times New Roman', value: '"Times New Roman", serif' },
+    { name: 'Courier New', value: '"Courier New", monospace' }
   ];
+  notificationsEnabled: boolean = true;
+  dateFormats = ['MM/DD/YYYY', 'DD/MM/YYYY', 'YYYY-MM-DD'];
+  dateFormat: string = 'MM/DD/YYYY';
+  autoLogoutTime: number = 15;
+  twoFactorAuthEnabled: boolean = false;
 
   toggleTheme() {
     this.theme = this.theme === 'light' ? 'dark' : 'light';
-    document.body.className = this.theme;
+    document.body.classList.toggle('dark-mode', this.theme === 'dark');
+  }
+
+  changeLanguage(event: any) {
+    const selectedLang = event.target.value;
+    console.log(`Language changed to: ${selectedLang}`);
+  }
+
+  changeColorScheme(color: string) {
+    document.documentElement.style.setProperty('--theme-color', color);
+    console.log(`Color scheme changed to: ${color}`);
   }
 
   changeFontSize(event: any) {
     this.fontSize = event.target.value;
-    document.documentElement.style.setProperty('--font-size', `${this.fontSize}px`);
-  }
-
-  changeFontFamily(event: any) {
-    this.fontFamily = event.target.value;
-    document.documentElement.style.setProperty('--font-family', this.fontFamily);
-  }
-
-  changeColorScheme(color: string) {
-    this.selectedColor = color;
-    document.documentElement.style.setProperty('--primary-color', this.selectedColor);
-  }
-
-  changeLanguage(event: any) {
-    this.language = event.target.value;
-    console.log('Language changed to:', this.language);
-  }
-
-  toggleNotifications() {
-    this.notificationsEnabled = !this.notificationsEnabled;
+    document.body.style.fontSize = `${this.fontSize}px`;
+    console.log(`Font size changed to: ${this.fontSize}px`);
   }
 
   togglePrivacy() {
     this.privacyPublic = !this.privacyPublic;
+    console.log(`Profile Visibility: ${this.privacyPublic ? 'Public' : 'Private'}`);
   }
 
-  changeAutoLogout(event: any) {
-    this.autoLogoutTime = event.target.value;
+  changeFontFamily(event: any) {
+    const selectedFont = event.target.value;
+    document.body.style.fontFamily = selectedFont;
+    console.log(`Font family changed to: ${selectedFont}`);
+  }
+
+  toggleTwoFactorAuth() {
+    this.twoFactorAuthEnabled = !this.twoFactorAuthEnabled;
+    console.log(`Two-Factor Authentication: ${this.twoFactorAuthEnabled ? 'Enabled' : 'Disabled'}`);
+  }
+
+  backupData() {
+    console.log('Data backup initiated...');
+    alert('Your data is being backed up.');
+  }
+
+  deleteAccount() {
+    if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+      console.log('Account deletion initiated.');
+      alert('Your account has been deleted.');
+    }
+  }
+
+  resetSettings() {
+    if (confirm('Are you sure you want to reset all settings to default?')) {
+      this.theme = 'light';
+      this.fontSize = 16;
+      this.privacyPublic = true;
+      this.notificationsEnabled = true;
+      this.dateFormat = 'MM/DD/YYYY';
+      this.autoLogoutTime = 15;
+      this.twoFactorAuthEnabled = false;
+      console.log('Settings reset to default.');
+      alert('All settings have been reset to default.');
+    }
   }
 }

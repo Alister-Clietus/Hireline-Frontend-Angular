@@ -7,7 +7,8 @@ import { LogoutService } from 'src/app/service/logout.service';
   templateUrl: './placement-sidebar.component.html',
   styleUrls: ['./placement-sidebar.component.css']
 })
-export class PlacementSidebarComponent implements OnInit {
+export class PlacementSidebarComponent implements OnInit 
+{
 
 
   isSidebarOpen: boolean = false;
@@ -45,6 +46,10 @@ export class PlacementSidebarComponent implements OnInit {
   {
     this.router.navigate(['./admin/company-details'],{skipLocationChange:true});
   }
+  addCompanyDetails() 
+  {
+    this.router.navigate(['./admin/add-company-details'],{skipLocationChange:true});
+  }
   listChamptions() 
   {
     this.router.navigate(['./admin/champion'],{skipLocationChange:true});
@@ -57,9 +62,13 @@ export class PlacementSidebarComponent implements OnInit {
   {
     this.router.navigate(['./admin/job-alert'],{skipLocationChange:true});
   }
-  download() 
+  addjobAlerts() 
   {
-    this.router.navigate(['./admin/download'],{skipLocationChange:true});
-    }
+    this.router.navigate(['./admin/add-job-alert'],{skipLocationChange:true});
+  }
+  addPlacementUser() 
+  {
+    this.router.navigate(['./admin/add-placement-user'],{skipLocationChange:true});  
+  }
 
 }

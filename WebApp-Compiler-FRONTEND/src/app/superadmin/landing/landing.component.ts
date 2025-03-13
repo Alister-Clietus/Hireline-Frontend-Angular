@@ -12,7 +12,8 @@ declare var jQuery: any;
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css']
 })
-export class LandingComponent implements OnInit {
+export class LandingComponent implements OnInit 
+{
   adminsettings:AdminSetting= new AdminSetting()
   programmingLanguagelist: any;
 

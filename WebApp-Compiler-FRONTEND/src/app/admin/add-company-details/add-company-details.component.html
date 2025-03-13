@@ -1,0 +1,194 @@
+<app-placement-sidebar></app-placement-sidebar>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.15.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+<div class="container">
+    <div class="row" style="margin-top: 40px;">
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
+                        <span>Company Name</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.companyName}}</span>
+                    <textarea 
+                        id="companyName" 
+                        placeholder="Enter company name" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.companyName"
+                    ></textarea>
+                </div>
+            </div> 
+        </div>
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
+                        <span>Job Title</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.jobTitle}}</span>
+                    <textarea 
+                        id="jobTitle" 
+                        placeholder="Enter job title" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.jobTitle"
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
+                        <span>Average LPA Provided</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.averageLpaProvided}}</span>
+                    <textarea 
+                        id="averageLpaProvided" 
+                        placeholder="Enter average LPA provided" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.averageLpaProvided"
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
+                        <span>Bond Required</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.bondRequired}}</span>
+                    <textarea 
+                        id="bondRequired" 
+                        placeholder="Mention bond details" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.bondRequired"
+                    ></textarea>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
+                        <span>Company Website</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.companyWebsite}}</span>
+                    <textarea 
+                        id="companyWebsite" 
+                        placeholder="Enter company website URL" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.companyWebsite"
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
+                        <span>Last Year Recruited Students</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.lastYearRecruitedStudents}}</span>
+                    <textarea 
+                        id="lastYearRecruitedStudents" 
+                        placeholder="Enter number of recruited students" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.lastYearRecruitedStudents"
+                    ></textarea>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
+                        <span>Company Started Year</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.companyStartedYear}}</span>
+                    <textarea 
+                        id="companyStartedYear" 
+                        placeholder="Enter company establishment year" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.companyStartedYear"
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
+                        <span>MNC or Startup</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.mncOrStartup}}</span>
+                    <textarea 
+                        id="mncOrStartup" 
+                        placeholder="Mention if MNC or Startup" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.mncOrStartup"
+                    ></textarea>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
+                        <span>Type of Recruitment</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.typeOfRecruitment}}</span>
+                    <textarea 
+                        id="typeOfRecruitment" 
+                        placeholder="Enter recruitment type" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.typeOfRecruitment"
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
+                        <span>Work Culture</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.workCulture}}</span>
+                    <textarea 
+                        id="workCulture" 
+                        placeholder="Describe work culture" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.workCulture"
+                    ></textarea>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="row" style="justify-content: space-evenly; align-items: center;">
+        <div class="col-md-6">
+            <button (click)="clear()" style="width: 300px; background-color: black; color: white;">
+                Clear
+            </button>
+        </div>
+        <div class="col-md-6">
+            <button (click)="submitCompany()" style="width: 300px; background-color: black; color: white;">
+                Add Job Details
+            </button>
+        </div>
+    </div>
+</div>

@@ -5,7 +5,7 @@
 <div class="sidebar" [ngClass]="{'open': isSidebarOpen}">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
-      <div class="logo_name">INTERLAND</div>
+      <div class="logo_name">Hireline</div>
       <i class='bx bx-menu' (click)="toggleSidebar()" id="btn"></i>
     </div>
     <ul class="nav-list">
@@ -57,7 +57,13 @@
         </a>
         <span class="tooltip">Questions</span>
       </li>
-
+      <li>
+        <a (click)="addQuestionair()">
+          <i class='bx bx-user-plus'></i>          
+          <span class="links_name">Add User</span>
+        </a>
+        <span class="tooltip">Add User</span>
+      </li>
      <li>
         <a (click)="logOut()">
           <i class='bx bx-log-out'></i>

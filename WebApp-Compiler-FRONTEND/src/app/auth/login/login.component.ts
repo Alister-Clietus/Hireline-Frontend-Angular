@@ -66,8 +66,23 @@ signupportal()
           icon: "success",
           title: "QUESTIONAIR LOGGED IN",
         }) 
-        this.router.navigate(['./question/addquestion'],{skipLocationChange:true}); 
+        this.router.navigate(['./question'],{skipLocationChange:true}); 
       }
+      else if((item.role=="PLACEMENTOFFICER"))
+        {
+          this.timer.settime(10000);
+          this.tokenservice.setUsername(item.username);
+          this.tokenservice.setToken(item.token);
+          Swal.fire({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 1000,
+            icon: "success",
+            title: "PLACEMENT OFFICER LOGGED IN",
+          }) 
+          this.router.navigate(['./admin/admin-dashboard'],{skipLocationChange:true}); 
+        }
       else if((item.role=="STUDENT"))
       {        
         this.fullscreenservice.fullScreenMethod();

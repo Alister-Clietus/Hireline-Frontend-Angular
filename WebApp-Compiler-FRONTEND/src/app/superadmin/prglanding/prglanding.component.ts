@@ -13,7 +13,8 @@ import Swal from 'sweetalert2'
   templateUrl: './prglanding.component.html',
   styleUrls: ['./prglanding.component.css']
 })
-export class PrglandingComponent implements OnInit {
+export class PrglandingComponent implements OnInit 
+{
   questions: Programlist[] = [];
   selectedQuesObj: SelectedQues = new SelectedQues();
   value: any;

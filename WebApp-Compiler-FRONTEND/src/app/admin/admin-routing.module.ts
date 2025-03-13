@@ -5,23 +5,23 @@ import { PlacementSidebarComponent } from './placement-sidebar/placement-sidebar
 import { PlacementAdminComponent } from './placement-admin/placement-admin.component';
 import { ChampionComponentComponent } from './champion-component/champion-component.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
-import { StudentDetailsComponent } from './student-details/student-details.component';
-import { DwnUpldComponent } from './dwn-upld/dwn-upld.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
-import { DownloadComponent } from './download/download.component';
+import { AddJobAlertComponent } from './add-job-alert/add-job-alert.component';
+import { AddCompanyDetailsComponent } from './add-company-details/add-company-details.component';
+import { AddPlacementUserComponent } from './add-placement-user/add-placement-user.component';
 
 
 const routes: Routes = 
 [
   {path:"sidebar-admin",component:PlacementSidebarComponent},
-  {path:"",component:AdminDashboardComponent},
+  {path:"admin-dashboard",component:AdminDashboardComponent},
   {path:"job-alert",component:PlacementAdminComponent},
-  {path:"student-details",component:StudentDetailsComponent},
+  {path:"add-job-alert",component:AddJobAlertComponent},
   {path:"company-details",component:CompanyDetailsComponent},
+  {path:"add-company-details",component:AddCompanyDetailsComponent},
+  {path:"add-placement-user",component:AddPlacementUserComponent},
   {path:"champion",component:ChampionComponentComponent},
-  {path:"dwn-upld",component:DwnUpldComponent},
-  {path:"download",component:DownloadComponent},
   {path:"settings",component:SettingsComponent},
 ];
 

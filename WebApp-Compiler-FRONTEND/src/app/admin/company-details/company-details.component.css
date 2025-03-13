@@ -1,0 +1,22 @@
+.company-table {
+    margin-left: 12%;
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .company-table th, .company-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .company-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  .company-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .company-table a {
+    color: #007bff;
+    text-decoration: none;
+  }

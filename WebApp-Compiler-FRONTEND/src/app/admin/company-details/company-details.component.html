@@ -1,2 +1,31 @@
 <app-placement-sidebar></app-placement-sidebar>
-<p>company-details works!</p>
+<table class="company-table">
+    <thead>
+      <tr>
+        <th>Company Name</th>
+        <th>Job Title</th>
+        <th>Average LPA Provided</th>
+        <th>Bond Required</th>
+        <th>Company Website</th>
+        <th>Last Year Recruited Students</th>
+        <th>MNC or Startup</th>
+        <th>Company Started Year</th>
+        <th>Work Culture</th>
+        <th>Type of Recruitment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let company of companies">
+        <td>{{ company.name }}</td>
+        <td>{{ company.jobTitle }}</td>
+        <td>{{ company.averageLPA }}</td>
+        <td>{{ company.bond }}</td>
+        <td><a [href]="company.website" target="_blank">Visit</a></td>
+        <td>{{ company.recruitedStudents }}</td>
+        <td>{{ company.type }}</td>
+        <td>{{ company.startedYear }}</td>
+        <td>{{ company.workCulture }}</td>
+        <td>{{ company.recruitmentType }}</td>
+      </tr>
+    </tbody>
+  </table>
