@@ -18,6 +18,7 @@ questiondto: any;
   clear() 
   {
     this.companydto=new CompanyDTO()
+    this.validationMessage = {};
   }
   submitCompany() 
   {

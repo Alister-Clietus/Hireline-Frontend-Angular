@@ -44,6 +44,22 @@
             <div class="form form-stacked">
                 <div class="form-block">
                     <div class="form-controls">
+                        <span>Company Started Year</span>
+                    </div>
+                    <span class="error-msg-span">{{validationMessage.companyStartedYear}}</span>
+                    <textarea 
+                        id="companyStartedYear" 
+                        placeholder="Enter company establishment year" 
+                        class="textarea-tall" 
+                        [(ngModel)]="companydto.companyStartedYear"
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form form-stacked">
+                <div class="form-block">
+                    <div class="form-controls">
                         <span>Average LPA Provided</span>
                     </div>
                     <span class="error-msg-span">{{validationMessage.averageLpaProvided}}</span>
@@ -56,22 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form form-stacked">
-                <div class="form-block">
-                    <div class="form-controls">
-                        <span>Bond Required</span>
-                    </div>
-                    <span class="error-msg-span">{{validationMessage.bondRequired}}</span>
-                    <textarea 
-                        id="bondRequired" 
-                        placeholder="Mention bond details" 
-                        class="textarea-tall" 
-                        [(ngModel)]="companydto.bondRequired"
-                    ></textarea>
-                </div>
-            </div> 
-        </div>
+
     </div>
 
     <div class="row">
@@ -109,84 +110,110 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px;">
         <div class="col-md-6">
             <div class="form form-stacked">
-                <div class="form-block">
-                    <div class="form-controls">
-                        <span>Company Started Year</span>
-                    </div>
-                    <span class="error-msg-span">{{validationMessage.companyStartedYear}}</span>
-                    <textarea 
-                        id="companyStartedYear" 
-                        placeholder="Enter company establishment year" 
-                        class="textarea-tall" 
-                        [(ngModel)]="companydto.companyStartedYear"
-                    ></textarea>
+              <div class="form-block">
+                <div class="form-controls">
+                  <span>Bond Required</span>
                 </div>
+                <span class="error-msg-span">{{ validationMessage.bondRequired }}</span>
+                <select style="height: 50px;"
+                  class="form-control" 
+                  id="bondRequired" 
+                  [(ngModel)]="companydto.bondRequired">
+                  <option value="" disabled selected>Select Bond Requirement</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
             </div>
-        </div>
+          </div>
+          
         <div class="col-md-6">
             <div class="form form-stacked">
-                <div class="form-block">
-                    <div class="form-controls">
-                        <span>MNC or Startup</span>
-                    </div>
-                    <span class="error-msg-span">{{validationMessage.mncOrStartup}}</span>
-                    <textarea 
-                        id="mncOrStartup" 
-                        placeholder="Mention if MNC or Startup" 
-                        class="textarea-tall" 
-                        [(ngModel)]="companydto.mncOrStartup"
-                    ></textarea>
+              <div class="form-block">
+                <div class="form-controls">
+                  <span>MNC or Startup</span>
                 </div>
-            </div> 
-        </div>
+                <span class="error-msg-span">{{ validationMessage.mncOrStartup }}</span>
+                <select style="height: 50px;"
+                  class="form-control" 
+                  id="mncOrStartup" 
+                  [(ngModel)]="companydto.mncOrStartup">
+                  <option value="" disabled selected>Select Company Type</option>
+                  <option value="MNC">MNC</option>
+                  <option value="Startup">Startup</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px;">
         <div class="col-md-6">
             <div class="form form-stacked">
-                <div class="form-block">
-                    <div class="form-controls">
-                        <span>Type of Recruitment</span>
-                    </div>
-                    <span class="error-msg-span">{{validationMessage.typeOfRecruitment}}</span>
-                    <textarea 
-                        id="typeOfRecruitment" 
-                        placeholder="Enter recruitment type" 
-                        class="textarea-tall" 
-                        [(ngModel)]="companydto.typeOfRecruitment"
-                    ></textarea>
+              <div class="form-block">
+                <div class="form-controls">
+                  <span>Type of Recruitment</span>
                 </div>
+                <span class="error-msg-span">{{ validationMessage.typeOfRecruitment }}</span>
+                <select style="height: 50px;"
+                  class="form-control" 
+                  id="typeOfRecruitment" 
+                  [(ngModel)]="companydto.typeOfRecruitment">
+                  <option value="" disabled selected>Select Recruitment Type</option>
+                  <option value="Apptitude:Technical Exam:Technical Interview:Personality Test">
+                    Apptitude → Technical Exam → Technical Interview → Personality Test
+                  </option>
+                  <option value="Technical Exam:Technical Interview:Personality Test">
+                    Technical Exam → Technical Interview → Personality Test
+                  </option>
+                  <option value="Technical Interview:Personality Test">
+                    Technical Interview → Personality Test
+                  </option>
+                  <option value="Apptitude:Coding:Technical Exam:Technical Interview:Personality Test">
+                    Apptitude → Coding → Technical Exam → Technical Interview → Personality Test
+                  </option>
+                  <option value="Coding:Technical Interview:Personality Test">
+                    Coding → Technical Interview → Personality Test
+                  </option>
+                </select>
+              </div>
             </div>
-        </div>
+          </div>
+          
         <div class="col-md-6">
             <div class="form form-stacked">
-                <div class="form-block">
-                    <div class="form-controls">
-                        <span>Work Culture</span>
-                    </div>
-                    <span class="error-msg-span">{{validationMessage.workCulture}}</span>
-                    <textarea 
-                        id="workCulture" 
-                        placeholder="Describe work culture" 
-                        class="textarea-tall" 
-                        [(ngModel)]="companydto.workCulture"
-                    ></textarea>
+              <div class="form-block">
+                <div class="form-controls">
+                  <span>Work Culture</span>
                 </div>
-            </div> 
-        </div>
+                <span class="error-msg-span">{{ validationMessage.workCulture }}</span>
+                <select style="height: 50px;"
+                  class="form-control" 
+                  id="workCulture" 
+                  [(ngModel)]="companydto.workCulture">
+                  <option value="" disabled selected>Select Work Culture</option>
+                  <option value="Hybrid">Hybrid</option>
+                  <option value="Remote">Remote</option>
+                  <option value="In-person">In-person</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
     </div>
 
     <div class="row" style="justify-content: space-evenly; align-items: center;">
         <div class="col-md-6">
-            <button (click)="clear()" style="width: 300px; background-color: black; color: white;">
+            <button (click)="clear()" style="width: 375px; background-color: black; color: white;">
                 Clear
             </button>
         </div>
         <div class="col-md-6">
-            <button (click)="submitCompany()" style="width: 300px; background-color: black; color: white;">
+            <button (click)="submitCompany()" style="width: 375px; background-color: black; color: white;">
                 Add Job Details
             </button>
         </div>

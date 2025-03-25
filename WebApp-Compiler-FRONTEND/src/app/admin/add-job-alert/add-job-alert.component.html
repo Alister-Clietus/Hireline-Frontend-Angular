@@ -77,39 +77,45 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form form-stacked">
-                <div class="form-block">
-                    <div class="form-controls">
-                        <span>Type of Company</span>
-                    </div>
-                    <span class="error-msg-span">{{validationMessage.typeOfCompany}}</span>
-                    <textarea 
-                        placeholder="Enter Type of Company" 
-                        class="textarea-tall" 
-                        id="type_of_company"
-                        [(ngModel)]="jobdto.typeOfCompany">
-                    </textarea>
+              <div class="form-block">
+                <div class="form-controls">
+                  <span>Type of Company</span>
                 </div>
+                <span class="error-msg-span">{{ validationMessage.typeOfCompany }}</span>
+                <select style="height: 50px;"
+                  class="form-control" 
+                  id="type_of_company" 
+                  [(ngModel)]="jobdto.typeOfCompany">
+                  <option value="" disabled selected>Select Type of Company</option>
+                  <option value="Hybrid">Hybrid</option>
+                  <option value="Remote">Remote</option>
+                  <option value="In-person">In-person</option>
+                </select>
+              </div>
             </div>
-        </div>
+          </div>
+          
         <div class="col-md-6">
             <div class="form form-stacked">
-                <div class="form-block">
-                    <div class="form-controls">
-                        <span>Startup or MNC</span>
-                    </div>
-                    <span class="error-msg-span">{{validationMessage.companyCategory}}</span>
-                    <textarea 
-                        placeholder="Enter Company Category (Startup or MNC)" 
-                        class="textarea-tall" 
-                        id="company_category"
-                        [(ngModel)]="jobdto.companyCategory">
-                    </textarea>
+              <div class="form-block">
+                <div class="form-controls">
+                  <span>Startup or MNC</span>
                 </div>
-            </div> 
-        </div>
+                <span class="error-msg-span">{{ validationMessage.companyCategory }}</span>
+                <select 
+                  class="form-control" style="height: 50px;" 
+                  id="company_category" 
+                  [(ngModel)]="jobdto.companyCategory">
+                  <option value="" disabled selected>Select Company Category</option>
+                  <option value="Startup">Startup</option>
+                  <option value="MNC">MNC</option>
+                </select>
+              </div>
+            </div>
+          </div> 
     </div>
 
-    <div class="form form-stacked">
+    <div class="form form-stacked" style="margin-top: 20px;">
         <div class="form-block">
             <div class="form-controls">
                 <span>Job Description</span>
@@ -128,12 +134,12 @@
     <div class="row" style="justify-content: space-evenly;align-items: center;">
         <div class="col-md-6">
             <div class="button">
-                <input type="submit" value="Clear" (click)="clear()" style="width: 300px; background-color: black; color: white;">
+                <input type="submit" value="Clear" (click)="clear()" style="width: 375px; background-color: black; color: white;">
             </div>
         </div>
         <div class="col-md-6">
             <div class="button">
-                <input type="submit" value="Add Job Details" (click)="submitJob()" style="width: 300px; background-color: black; color: white;">
+                <input type="submit" value="Add Job Details" (click)="submitJob()" style="width: 375px; background-color: black; color: white;">
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JobDTO } from 'src/app/models/job-dto';
 import { HttpService } from 'src/app/service/http.service';
 import Swal from 'sweetalert2';
 
@@ -7,83 +8,152 @@ import Swal from 'sweetalert2';
   templateUrl: './jobalerts.component.html',
   styleUrls: ['./jobalerts.component.css']
 })
-export class JobalertsComponent implements OnInit {
+export class JobalertsComponent implements OnInit 
+{
 
-  toggleJobsunverified() 
-  {
-    this.showJobs2 = !this.showJobs2;}
+  
+    verify(job: JobDTO) 
+    {
+      const url = "http://localhost:8098/placement/verify-job";
+      this.httpservice.postdata(url, job).subscribe
+      (
+        (response: any) => {
+          if (response && response.code === "Success") 
+          {
+            Swal.fire("Success!", "Job Verified successfully", "success");
+            this.getJobDetails();
+            this.getVerifiedJobDetails() // Refresh job list
+          } 
+          else 
+          {
+            Swal.fire("Fail!", "Unable to delete job", "error");
+          }
+        },
+        (error) => {
+          Swal.fire("Error!", "Something went wrong. Please try again.", "error");
+        }
+      );
+    }
+  
+    deleteJob(job: JobDTO) 
+    {
+      const url = "http://localhost:8098/placement/delete-job";
+      this.httpservice.postdata(url, job).subscribe
+      (
+        (response: any) => 
+        {
+          if (response && response.code === "Success") 
+          {
+            Swal.fire("Success!", "Job deleted successfully", "success");
+            this.getJobDetails();
+            this.getVerifiedJobDetails() // Refresh job list
+          } 
+          else 
+          {
+            Swal.fire("Fail!", "Unable to delete job", "error");
+          }
+        },
+        (error) => {
+          Swal.fire("Error!", "Something went wrong. Please try again.", "error");
+        }
+      );
+    }
+    
+  
+    jobs: any[] = [];
+    verifiedjobs: any[] = [];
+  
+    toggleJobsunverified() 
+    {
+      this.showJobs2 = !this.showJobs2;
+    }
   
     constructor(private httpservice: HttpService) { }
   
     ngOnInit(): void 
     {
-      this.showJobs= true;
-    this.showJobs2= true;
-      this.getJobDetails()
+      this.getJobDetails();
+      this.getVerifiedJobDetails();
     }
   
-    getJobDetails()
+    getJobDetails() 
     {
-      const getjoburl="http://127.0.0.1:8098/placement-admin/fetch-emails";
-          this.httpservice.getbyurlOnly(getjoburl).subscribe((item: any)=>
-          {
-            if (item)
-            {
-              console.log(item)
-            }
-            else
-            {
-              Swal.fire("Fail!");
-              if (item.details)
-              {
-                Swal.fire("Validation Error!");
-                item.details.forEach(element =>
-                  {
-                  var key = Object.keys(element)[0];
-                });
-              }
-            }
-          },
-          error=>
-          {
-            if(error.status == "400")
-            {
-            let msg = "";
-            error.error.details.forEach(element =>
-              {
-                msg = msg + element + "<br>"
-              });
-              Swal.fire("Error!");
-            }
-          })
+      const getjoburl = "http://127.0.0.1:8098/placement/get-alljob";
+      this.httpservice.getbyurlOnly(getjoburl).subscribe(
+        (response: any) => 
+        {
+          if (response && response.code === "Success" && response.details && response.details.aaData) {
+            this.jobs = response.details.aaData; // Assigning aaData array to job variable
+            console.log(this.jobs); // Log job data
+            Swal.fire("Success!", "Job data available", "success");
+          } else {
+            Swal.fire("Fail!", "No job data available", "error");
+          }
+        },
+        (error) => 
+        {
+          if (error.status === 400 && error.error.details) {
+            let msg = error.error.details.join("<br>"); // Joining error messages
+            Swal.fire("Validation Error!", msg, "error");
+          } else {
+            Swal.fire("Error!", "Something went wrong. Please try again.", "error");
+          }
+        }
+      );
     }
   
+    getVerifiedJobDetails() 
+    {
+      const getjoburl = "http://127.0.0.1:8098/placement/get-verified-jobs";
+      this.httpservice.getbyurlOnly(getjoburl).subscribe(
+        (response: any) => 
+        {
+          if (response && response.code === "Success" && response.details && response.details.aaData) 
+            {
+            Swal.fire("Success!", "Verified Job data available", "success");
+            this.verifiedjobs = response.details.aaData; // Assigning aaData array to job variable
+            console.log(this.verifiedjobs); // Log job data
+          } else {
+            Swal.fire("Fail!", "No job data available", "error");
+          }
+        },
+        (error) => 
+        {
+          if (error.status === 400 && error.error.details) {
+            let msg = error.error.details.join("<br>"); // Joining error messages
+            Swal.fire("Validation Error!", msg, "error");
+          } else {
+            Swal.fire("Error!", "Something went wrong. Please try again.", "error");
+          }
+        }
+      );
+    }
     showJobs: boolean = false;
     showJobs2: boolean = false;
   
-    // Example job data
-    jobs = [
-      {
-        title: 'Software Developer',
-        description: 'We are looking for a passionate developer to join our team and work on exciting projects.',
-        companyLink: '#',
-      },
-      {
-        title: 'Data Analyst',
-        description: 'Analyze and interpret data to provide insights and recommendations for business growth.',
-        companyLink: '#',
-      },
-      {
-        title: 'UI/UX Designer',
-        description: 'Design user-friendly interfaces and enhance the overall user experience.',
-        companyLink: '#',
-      },
-    ];
-  
-    // Toggle job visibility
-    toggleJobs() {
+    toggleVerifiedJobs() 
+    {
       this.showJobs = !this.showJobs;
     }
+
+    confirmApply(job: any) {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: 'Do you want to mark this job as applied?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, apply!',
+        cancelButtonText: 'No, cancel!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.markAsApplied(job);
+          Swal.fire('Applied!', 'The job has been marked as applied.', 'success');
+        }
+      });
+    }
   
+    markAsApplied(job: any) {
+      job.applied = true;
+    }
 
 }

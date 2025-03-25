@@ -1,31 +1,57 @@
 <app-placement-sidebar></app-placement-sidebar>
+<div class="rectablge">
+
+</div>
 <table class="company-table">
-    <thead>
-      <tr>
-        <th>Company Name</th>
-        <th>Job Title</th>
-        <th>Average LPA Provided</th>
-        <th>Bond Required</th>
-        <th>Company Website</th>
-        <th>Last Year Recruited Students</th>
-        <th>MNC or Startup</th>
-        <th>Company Started Year</th>
-        <th>Work Culture</th>
-        <th>Type of Recruitment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let company of companies">
-        <td>{{ company.name }}</td>
-        <td>{{ company.jobTitle }}</td>
-        <td>{{ company.averageLPA }}</td>
-        <td>{{ company.bond }}</td>
-        <td><a [href]="company.website" target="_blank">Visit</a></td>
-        <td>{{ company.recruitedStudents }}</td>
-        <td>{{ company.type }}</td>
-        <td>{{ company.startedYear }}</td>
-        <td>{{ company.workCulture }}</td>
-        <td>{{ company.recruitmentType }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th>Company Name</th>
+      <th>Job Title</th>
+      <th>Average LPA Provided</th>
+      <th>Bond Required</th>
+      <th>Company Website</th>
+      <th>Last Year Recruited Students</th>
+      <th>MNC or Startup</th>
+      <th>Company Started Year</th>
+      <th>Work Culture</th>
+      <th>Type of Recruitment</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let company of companies">
+      <td>{{ company.companyName }}</td>
+      <td>{{ company.jobTitle }}</td>
+      <td>{{ company.averageLpaProvided }}</td>
+      <td>{{ company.bondRequired }}</td>
+      <td><a [href]="company.companyWebsite" target="_blank">Visit</a></td>
+      <td>{{ company.lastYearRecruitedStudents }}</td>
+      <td>{{ company.mncOrStartup }}</td>
+      <td>{{ company.companyStartedYear }}</td>
+      <td>{{ company.workCulture }}</td>
+      <td>{{ company.typeOfRecruitment }}</td>
+      <td>
+        <button 
+          *ngIf="company.status === 'PENDING'" 
+          (click)="verifyCompany(company)" 
+          class="btn green-square">
+          Click to Verify
+        </button>
+        <button 
+          *ngIf="company.status === 'VERIFIED'" 
+          (click)="markPending(company)" 
+          class="btn yellow-square">
+          Click to Pending
+        </button>
+      </td>
+      <td>
+        <button (click)="deleteCompany(company)" class="btn red-square">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

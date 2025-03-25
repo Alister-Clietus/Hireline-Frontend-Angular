@@ -105,6 +105,16 @@
     transition: transform 0.3s ease; /* Smooth animation for rotation */
 }
 
+.toggle-arrow-unverified {
+    margin-right: 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease; /* Smooth animation for rotation */
+}
+
 .rotate-arrow {
+    transform: rotate(90deg); /* Rotates the arrow to point down */
+}
+
+.rotate-arrow-verified {
     transform: rotate(90deg); /* Rotates the arrow to point down */
 }

@@ -1,8 +1,11 @@
+.rectablge
+{
+  height: 50px;
+}
 .company-table {
     margin-left: 12%;
     width: 80%;
     border-collapse: collapse;
-    margin-top: 20px;
   }
   .company-table th, .company-table td {
     border: 1px solid #ddd;
@@ -20,3 +23,29 @@
     color: #007bff;
     text-decoration: none;
   }
+
+
+  .btn {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .green-square {
+    background-color: green;
+    color: white;
+  }
+  
+  .yellow-square {
+    background-color: yellow;
+    color: black;
+  }
+  
+  .red-square {
+    background-color: red;
+    color: white;
+  }
+  

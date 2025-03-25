@@ -20,6 +20,7 @@ export class AddJobAlertComponent implements OnInit
   clear() 
   {
     this.jobdto=new JobDTO();
+    this.validationMessage = {};
   }
 
   submitJob() 

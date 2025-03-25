@@ -1,35 +1,37 @@
 <app-placement-sidebar></app-placement-sidebar>
-<div class="header" (click)="toggleJobs()">
+
+<div class="header" (click)="toggleVerifiedJobs()">
     <span class="pageHeading1">Verified Jobs</span>
     <span class="toggle-arrow" [class.rotate-arrow]="showJobs">&#9654;</span>
 </div>
+
 <div class="verifiedjob" *ngIf="showJobs">
-    <div class="jobbox" *ngFor="let job of jobs">
+    <div class="jobbox" *ngFor="let job of verifiedjobs">
         <h2 class="job-title">{{ job.jobTitle }}</h2>
         <p class="job-description">{{ job.jobDescription }}</p>
         <a [href]="job.companyName" class="company-link" target="_blank">Visit Company</a>
         <div class="buttons">
-            <button class="btn apply-btn">Apply</button>
-            <button class="btn verify-btn">Verify</button>
-            <button class="btn publish-btn">Publish</button>
+            <button class="btn apply-btn" (click)="deleteJob(job)">Delete</button>
+            <!-- <button class="btn verify-btn" (click)="verify(job)">Verify</button> -->
         </div>
     </div>
 </div>
 
 <div class="header" (click)="toggleJobsunverified()">
     <span class="pageHeading1">Unverified Jobs</span>
-    <span class="toggle-arrow" [class.rotate-arrow]="showJobs">&#9654;</span>
+    <span class="toggle-arrow-unverified" [class.rotate-arrow-verified]="showJobs">&#9654;</span>
 </div>
+
 <div class="verifiedjob" *ngIf="showJobs2">
     <div class="jobbox" *ngFor="let job of jobs">
-        <h2 class="job-title">{{ job.jobTitle }}</h2>
-        <p class="job-description">{{ job.jobDescription }}</p>
-        <a [href]="job.companyName" class="company-link" target="_blank">Visit Company</a>
-        <div class="buttons">
-            <button class="btn apply-btn">Apply</button>
-            <button class="btn verify-btn">Verify</button>
-            <button class="btn publish-btn">Publish</button>
-        </div>
+      <h2 class="job-title">{{ job.jobTitle }}</h2>
+      <p class="job-description">{{ job.jobDescription }} with Job ID {{ job.jobid }}</p>
+      <a [href]="job.companyName" class="company-link" target="_blank">Visit Company</a>
+      <div class="buttons">
+        <button class="btn apply-btn" (click)="deleteJob(job)">Delete</button>
+        <button class="btn verify-btn" (click)="verify(job)">Verify</button>
+      </div>        
     </div>
 </div>
+  
 

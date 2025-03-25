@@ -1,186 +1,115 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyDTO } from 'src/app/models/company-dto';
+import { HttpService } from 'src/app/service/http.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-company-details',
   templateUrl: './company-details.component.html',
   styleUrls: ['./company-details.component.css']
 })
-export class CompanyDetailsComponent implements OnInit {
+export class CompanyDetailsComponent implements OnInit 
+{
 
-  constructor() { }
+  markPending(companydto: CompanyDTO) 
+    {
+      const url = "http://localhost:8098/placement/pending-company";
+      this.httpservice.postdata(url, companydto).subscribe
+      (
+        (response: any) => {
+          if (response && response.code === "Success") 
+          {
+            Swal.fire("Success!", "Job Verified successfully", "success");
+            this.getCompanyDetails();
+          } 
+          else 
+          {
+            Swal.fire("Fail!", "Unable to delete job", "error");
+          }
+        },
+        (error) => {
+          Swal.fire("Error!", "Something went wrong. Please try again.", "error");
+        }
+      );
+  }
+
+  deleteCompany(companydto: CompanyDTO) 
+    {
+      const url = "http://localhost:8098/placement/delete-company";
+      this.httpservice.postdata(url, companydto).subscribe
+      (
+        (response: any) => {
+          if (response && response.code === "Success") 
+          {
+            Swal.fire("Success!", "Job Verified successfully", "success");
+            this.getCompanyDetails();
+          } 
+          else 
+          {
+            Swal.fire("Fail!", "Unable to delete job", "error");
+          }
+        },
+        (error) => {
+          Swal.fire("Error!", "Something went wrong. Please try again.", "error");
+        }
+      );
+  }
+
+  companies: any[] = [];
+
+  constructor(private httpservice: HttpService) { }
 
   ngOnInit(): void 
   {
-
+    this.getCompanyDetails()
   }
 
-  companies = [
+    getCompanyDetails() 
     {
-      name: 'Google',
-      ctc: '30 LPA',
-      examDate: '2025-07-15',
-      role: 'Software Engineer',
-      eligibility: '7.5+ CGPA, No backlogs',
-      previousPlacements: 5,
-      selectionProcess: 'Aptitude + Coding + Interview',
-      jobLocation: 'Bangalore',
-      bond: 'No',
-    },
-    {
-      name: 'Amazon',
-      ctc: '28 LPA',
-      examDate: '2025-08-10',
-      role: 'Cloud Engineer',
-      eligibility: '7.0+ CGPA, No backlogs',
-      previousPlacements: 8,
-      selectionProcess: 'Online Test + 2 Rounds Interview',
-      jobLocation: 'Hyderabad',
-      bond: 'No',
-    },
-    {
-      name: 'TCS Digital',
-      ctc: '7 LPA',
-      examDate: '2025-06-25',
-      role: 'Software Developer',
-      eligibility: '6.0+ CGPA, Max 1 backlog',
-      previousPlacements: 15,
-      selectionProcess: 'Online Test + Interview',
-      jobLocation: 'Multiple Locations',
-      bond: 'Yes, 2 Years',
-    },
-    {
-      name: 'Microsoft',
-      ctc: '40 LPA',
-      examDate: '2025-07-20',
-      role: 'Software Development Engineer',
-      eligibility: '8+ CGPA, No backlogs',
-      previousPlacements: 4,
-      selectionProcess: 'Aptitude + Coding + 2 Interviews',
-      jobLocation: 'Hyderabad',
-      bond: 'No',
-    },
-    {
-      name: 'Infosys',
-      ctc: '5 LPA',
-      examDate: '2025-06-30',
-      role: 'System Engineer',
-      eligibility: '6+ CGPA, No backlogs',
-      previousPlacements: 20,
-      selectionProcess: 'Online Test + Interview',
-      jobLocation: 'Multiple Locations',
-      bond: 'Yes, 1 Year',
-    },
-    {
-      name: 'Wipro',
-      ctc: '4.5 LPA',
-      examDate: '2025-07-05',
-      role: 'Project Engineer',
-      eligibility: '6+ CGPA, Max 1 backlog',
-      previousPlacements: 18,
-      selectionProcess: 'Aptitude + Technical Interview',
-      jobLocation: 'Multiple Locations',
-      bond: 'Yes, 1.5 Years',
-    },
-    {
-      name: 'Adobe',
-      ctc: '32 LPA',
-      examDate: '2025-07-10',
-      role: 'Software Engineer',
-      eligibility: '7.5+ CGPA, No backlogs',
-      previousPlacements: 6,
-      selectionProcess: 'Online Test + 3 Rounds Interview',
-      jobLocation: 'Bangalore',
-      bond: 'No',
-    },
-    // {
-    //   name: 'Flipkart',
-    //   ctc: '26 LPA',
-    //   examDate: '2025-07-18',
-    //   role: 'Data Scientist',
-    //   eligibility: '7+ CGPA, No backlogs',
-    //   previousPlacements: 7,
-    //   selectionProcess: 'Aptitude + Coding + Interview',
-    //   jobLocation: 'Bangalore',
-    //   bond: 'No',
-    // },
-    // {
-    //   name: 'Capgemini',
-    //   ctc: '6 LPA',
-    //   examDate: '2025-06-28',
-    //   role: 'Software Engineer',
-    //   eligibility: '6+ CGPA, No backlogs',
-    //   previousPlacements: 25,
-    //   selectionProcess: 'Online Test + HR & Technical Interview',
-    //   jobLocation: 'Multiple Locations',
-    //   bond: 'Yes, 2 Years',
-    // },
-    // {
-    //   name: 'Cognizant',
-    //   ctc: '5.5 LPA',
-    //   examDate: '2025-06-22',
-    //   role: 'Programmer Analyst',
-    //   eligibility: '6+ CGPA, Max 1 backlog',
-    //   previousPlacements: 22,
-    //   selectionProcess: 'Online Test + Interview',
-    //   jobLocation: 'Multiple Locations',
-    //   bond: 'Yes, 1.5 Years',
-    // },
-    // {
-    //   name: 'Goldman Sachs',
-    //   ctc: '25 LPA',
-    //   examDate: '2025-07-12',
-    //   role: 'Financial Analyst',
-    //   eligibility: '7.5+ CGPA, No backlogs',
-    //   previousPlacements: 3,
-    //   selectionProcess: 'Aptitude + Case Study + Interview',
-    //   jobLocation: 'Bangalore',
-    //   bond: 'No',
-    // },
-    // {
-    //   name: 'Oracle',
-    //   ctc: '20 LPA',
-    //   examDate: '2025-07-08',
-    //   role: 'Database Engineer',
-    //   eligibility: '7+ CGPA, No backlogs',
-    //   previousPlacements: 6,
-    //   selectionProcess: 'Online Test + Interview',
-    //   jobLocation: 'Hyderabad',
-    //   bond: 'No',
-    // },
-    // {
-    //   name: 'Deloitte',
-    //   ctc: '12 LPA',
-    //   examDate: '2025-07-14',
-    //   role: 'Business Analyst',
-    //   eligibility: '7+ CGPA, No backlogs',
-    //   previousPlacements: 10,
-    //   selectionProcess: 'Case Study + Interview',
-    //   jobLocation: 'Mumbai',
-    //   bond: 'No',
-    // },
-    // {
-    //   name: 'JP Morgan Chase',
-    //   ctc: '22 LPA',
-    //   examDate: '2025-07-16',
-    //   role: 'Software Developer',
-    //   eligibility: '7.5+ CGPA, No backlogs',
-    //   previousPlacements: 5,
-    //   selectionProcess: 'Aptitude + Coding + HR Interview',
-    //   jobLocation: 'Bangalore',
-    //   bond: 'No',
-    // },
-    // {
-    //   name: 'Accenture',
-    //   ctc: '6.5 LPA',
-    //   examDate: '2025-06-29',
-    //   role: 'Software Developer',
-    //   eligibility: '6+ CGPA, No backlogs',
-    //   previousPlacements: 30,
-    //   selectionProcess: 'Online Test + Technical Interview',
-    //   jobLocation: 'Multiple Locations',
-    //   bond: 'Yes, 1.5 Years',
-    // }
-];
+      const getjoburl = "http://localhost:8098/placement/get-company";
+      this.httpservice.getbyurlOnly(getjoburl).subscribe(
+        (response: any) => 
+        {
+          if (response && response.code === "Success" && response.details && response.details.aaData) {
+            this.companies = response.details.aaData; // Assigning aaData array to job variable
+            console.log(this.companies); // Log job data
+          } else {
+            Swal.fire("Fail!", "No job data available", "error");
+          }
+        },
+        (error) => 
+        {
+          if (error.status === 400 && error.error.details) {
+            let msg = error.error.details.join("<br>"); // Joining error messages
+            Swal.fire("Validation Error!", msg, "error");
+          } else {
+            Swal.fire("Error!", "Something went wrong. Please try again.", "error");
+          }
+        }
+      );
+    }
+
+  verifyCompany(companydto: CompanyDTO) 
+  {
+    const url = "http://localhost:8098/placement/verify-company";
+    this.httpservice.postdata(url, companydto).subscribe
+    (
+      (response: any) => {
+        if (response && response.code === "Success") 
+        {
+          Swal.fire("Success!", "Job Verified successfully", "success");
+          this.getCompanyDetails();
+        } 
+        else 
+        {
+          Swal.fire("Fail!", "Unable to delete job", "error");
+        }
+      },
+      (error) => {
+        Swal.fire("Error!", "Something went wrong. Please try again.", "error");
+      }
+    );
+  }
 
 
 }
