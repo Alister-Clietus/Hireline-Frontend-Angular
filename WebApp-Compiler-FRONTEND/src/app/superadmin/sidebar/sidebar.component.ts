@@ -26,7 +26,7 @@ export class SidebarComponent{
     this.router.navigate(['./supadmin/addquestion'],{skipLocationChange:true});
   }
   viewAnalytics() {
-    this.router.navigate(['./auth/signup/questionnaire'],{skipLocationChange:true});
+    this.router.navigate(['./supadmin/add-questionnair'],{skipLocationChange:true});
   }
   viewCodeBase() {
     this.router.navigate(['./supadmin/programmigquestionlist'],{skipLocationChange:true});

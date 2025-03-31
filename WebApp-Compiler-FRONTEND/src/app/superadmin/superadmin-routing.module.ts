@@ -27,6 +27,7 @@ import { AddQuestionComponent } from './add-question/add-question.component';
 import { AddPRGQuestionComponent } from './add-prgquestion/add-prgquestion.component';
 import { AddMCQQuestionComponent } from './add-mcqquestion/add-mcqquestion.component';
 import { AuthGuard } from '../service/gurad/auth.guard';
+import { QuestionairComponent } from './questionair/questionair.component';
 
 
 
@@ -47,6 +48,7 @@ const routes: Routes =
   {path:"details/excelUpload",component:ExcelUploadComponent},
   {path:"upload",component:UploadComponent},
   {path:"download",component:DownloadComponent},
+  {path:"add-questionnair",component:QuestionairComponent},
 
 
   {path:"questionDetails",component:QuestionDetailsComponent,canActivate: [AuthGuard] },

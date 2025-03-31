@@ -22,6 +22,7 @@ signupportal()
   this.router.navigate(['./auth/signup/student-portal'],{skipLocationChange:true});
 }
   logindto:Login = new Login();
+  sendemail:any
   constructor(private router: Router,private httpservice: HttpService,private tokenservice: TokenserviceService,private timer:TimerService,private visitedroutes:RouteVisitService,private fullscreenservice:FullScreenService) { }
 
   ngOnInit(): void 
@@ -114,7 +115,8 @@ signupportal()
             icon: "success",
             title: "STUDENT LOGGED IN",
           })
-          this.router.navigate(['./student/landing'],{skipLocationChange:true});
+          console.log(this.logindto.email)
+          this.router.navigate([`./student/student-portal/${this.logindto.email}`], { skipLocationChange: true });
         }
  
       }
@@ -135,8 +137,8 @@ signupportal()
           icon: "success",
           title: "STUDENT PORTAL LOGGED IN",
         })
-        this.router.navigate(['./student/student-portal'],{skipLocationChange:true});
-
+        this.sendemail=this.logindto.email
+        this.router.navigate([`./student/student-portal/${btoa(this.sendemail)}`], { skipLocationChange: true });
       }
     },
     error=>

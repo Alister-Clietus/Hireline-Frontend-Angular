@@ -7,6 +7,7 @@ export class TokenserviceService
 {
   private TOKEN_KEY = 'auth-token';
   private USERNAME = 'username';
+  private email = 'username';
   private IsMCQ='YES';
   private SUBMIT='NO';
   heading:String;

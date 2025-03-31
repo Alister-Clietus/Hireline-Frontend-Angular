@@ -1,70 +1,71 @@
 <app-sidebar></app-sidebar>
 <!-- search -->
-<div class="card text-center mx-auto mt-3" >
-  <div class="card-header text-white">
-      <h3 class="card-title" >
-          <i class="fas fa-user mr-2 "></i><span>User Search</span>
-      </h3>
-
-  </div>
-  <div class="card-body">
-      <div class="row">
-          <div class="col-md-4">
-              <div class="form-group">
-                  <!-- <label for="userName">User Name</label> -->
-                  <input type="text" class="form-control" id="userName" placeholder="Enter User Name" name="userName">
-              </div>
-              <div class="form-group">
-                  <!-- <label for="PhoneNumber">Phone Number</label> -->
-                  <input type="number" class="form-control" id="phoneNumber" placeholder="Enter Phone Number" name="PhoneNumber">
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="form-group">
-                  <!-- <label for="fullname">Full Name</label> -->
-                  <input type="text" class="form-control" id="fullname" placeholder="Enter Name" name="fullname">
-              </div>
-              <div class="form-group">
-                <!-- <label for="email">User Email</label> -->
-                <input type="text" class="form-control" id="email" placeholder="Enter User Email" name="email">
-            </div>
- 
-          </div>
-
-          <div class="col-md-4">
-            <div class="form-group">
-              <!-- <label for="userType">User Type</label> -->
-              <select class="form-control" id="userType" name="userType">
-                  <option value="" selected>Select User Type</option>
-                  <option value="STUDENT">Student</option>
-                  <option value="QUESTIONNAIRE">questionnaire</option>
-                  <option value="ADMIN">Admin</option>
-              </select>
-          </div>
-            <div class="form-group">
-                <!-- <label for="idStatus">Status</label> -->
-                <select class="form-control" id="idStatus" name="idStatus">
-                    <option value="" selected>Select Status</option>
-                    <option value="PROCESSD">Processed</option>
-                    <option value="VERIFIED">Verified</option>
-                    <option value="DELETED">Deleted</option>
-                </select>
-            </div>
-        </div>
+<div class="container123">
+    <div class="card text-center mx-auto mt-3" >
+      <div class="card-header text-white">
+          <h3 class="card-title" >
+              <i class="fas fa-user mr-2 "></i><span>User Search</span>
+          </h3>
 
       </div>
-  </div>
-</div>
-<!-- /.card-body -->
-<div class="card-footer text-center">
-  <button type="button" class="btn action-btn mx-2 clear-btn" style="margin-right: 10px; font-weight: bolder;" (click)="clear()">
-      CLEAR
-  </button>
-  <button type="button" class="btn action-btn mx-2 search-btns"  (click)="search()">
-      SEARCH
-  </button>
-</div>
+      <div class="card-body">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <!-- <label for="userName">User Name</label> -->
+                      <input type="text" class="form-control" id="userName" placeholder="Enter User Name" name="userName">
+                  </div>
+                  <div class="form-group">
+                      <!-- <label for="PhoneNumber">Phone Number</label> -->
+                      <input type="number" class="form-control" id="phoneNumber" placeholder="Enter Phone Number" name="PhoneNumber">
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <!-- <label for="fullname">Full Name</label> -->
+                      <input type="text" class="form-control" id="fullname" placeholder="Enter Name" name="fullname">
+                  </div>
+                  <div class="form-group">
+                    <!-- <label for="email">User Email</label> -->
+                    <input type="text" class="form-control" id="email" placeholder="Enter User Email" name="email">
+                </div>
+    
+              </div>
 
+              <div class="col-md-4">
+                <div class="form-group">
+                  <!-- <label for="userType">User Type</label> -->
+                  <select class="form-control" id="userType" name="userType">
+                      <option value="" selected>Select User Type</option>
+                      <option value="STUDENT">Student</option>
+                      <option value="QUESTIONNAIRE">questionnaire</option>
+                      <option value="ADMIN">Admin</option>
+                  </select>
+              </div>
+                <div class="form-group">
+                    <!-- <label for="idStatus">Status</label> -->
+                    <select class="form-control" id="idStatus" name="idStatus">
+                        <option value="" selected>Select Status</option>
+                        <option value="PROCESSD">Processed</option>
+                        <option value="VERIFIED">Verified</option>
+                        <option value="DELETED">Deleted</option>
+                    </select>
+                </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer text-center">
+      <button type="button" class="btn action-btn mx-2 clear-btn" style="margin-right: 10px; font-weight: bolder;" (click)="clear()">
+          CLEAR
+      </button>
+      <button type="button" class="btn action-btn mx-2 search-btns"  (click)="search()">
+          SEARCH
+      </button>
+    </div>
+</div>
 
 <hr class="custom-hr" >
 <!-- search -->

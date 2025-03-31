@@ -22,12 +22,18 @@ export class DashboardComponent implements OnInit
   public totalquestions: number;
   public mcqquestions: number;
   public programmingquestions: number;
+  public verifiedmcqquestions: number;
+  public verifiedprogrammingquestions: number;
   public studentsattended: number;
   public studentsregistred: number;
   public admin: number;
   public numberofmcqforstudents: number;
   public numberOfPrgForStudents: number;
   public questionair: number;
+  public verifiedquestionair: number;
+  public verifiedstudentsattended: number;
+  public verifiedadmin: number;
+
   ngOnInit(): void 
   {
     this.getdatascategoryProgram()
@@ -136,12 +142,17 @@ export class DashboardComponent implements OnInit
       this.totalquestions=item.allquestions
       this.mcqquestions=item.mcqquestions
       this.programmingquestions=item.programquestions
+      this.verifiedmcqquestions=item.verifiedMcqQuestionsCount
+      this.verifiedprogrammingquestions=item.verifiedProgrammingQuestionsCount
       this.studentsattended=20
       this.studentsregistred=item.noofstudents
       this.admin=item.noofadmin
       this.numberofmcqforstudents=30
       this.numberOfPrgForStudents=5
       this.questionair=item.noofquestionair;
+      this.verifiedadmin=item.verifiedAdminsCount;
+      this.verifiedstudentsattended=item.verifiedStudentsCount;
+      this.verifiedquestionair=item.verifiedQuestionnairesCount;
     },
     error=>
     {

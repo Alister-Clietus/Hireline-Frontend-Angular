@@ -28,6 +28,7 @@ import { DownloadComponent } from './download/download.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { AddMCQQuestionComponent } from './add-mcqquestion/add-mcqquestion.component';
 import { AddPRGQuestionComponent } from './add-prgquestion/add-prgquestion.component';
+import { QuestionairComponent } from './questionair/questionair.component';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { AddPRGQuestionComponent } from './add-prgquestion/add-prgquestion.compo
       LandingComponent,
       McqComponent, SidebarComponent, SetAdminComponent, VerifyComponent, UpdateComponent, AllDetailsComponent,ExcelUploadComponent,
 
-       PrglandingComponent, CompileAddedCodeComponent, QuestionDetailsComponent,PrgVerifyComponent,PrgUpdateComponent,McqUpdateComponent,McqVerifyComponent, McqUploadComponent, PrgUploadComponent, UploadComponent, DownloadComponent, AddQuestionComponent, AddMCQQuestionComponent, AddPRGQuestionComponent],
+       PrglandingComponent, CompileAddedCodeComponent, QuestionDetailsComponent,PrgVerifyComponent,PrgUpdateComponent,McqUpdateComponent,McqVerifyComponent, McqUploadComponent, PrgUploadComponent, UploadComponent, DownloadComponent, AddQuestionComponent, AddMCQQuestionComponent, AddPRGQuestionComponent, QuestionairComponent],
 
 
   imports: [
