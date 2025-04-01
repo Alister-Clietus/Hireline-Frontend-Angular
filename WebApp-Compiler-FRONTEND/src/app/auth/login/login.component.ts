@@ -116,7 +116,7 @@ signupportal()
             title: "STUDENT LOGGED IN",
           })
           console.log(this.logindto.email)
-          this.router.navigate([`./student/student-portal/${this.logindto.email}`], { skipLocationChange: true });
+          this.router.navigate([`./student/landing`], { skipLocationChange: true });
         }
  
       }
