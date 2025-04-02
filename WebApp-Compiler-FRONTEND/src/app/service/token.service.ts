@@ -11,6 +11,7 @@ export class TokenserviceService
   private IsMCQ='YES';
   private SUBMIT='NO';
   heading:String;
+  EMAILID:string;
   constructor() 
   {
 
@@ -29,6 +30,16 @@ export class TokenserviceService
   {
     localStorage.setItem(this.TOKEN_KEY, token);
   } //set token ends here ***********************************************
+
+  setGmail(email_id:string)
+  {
+    return this.EMAILID=email_id;
+  } //set token ends here ***********************************************
+
+  getGmail()
+  {
+    return this.EMAILID;
+  } //gettoken ends here *************************************************
 
   setUsername(username: string): void 
   {

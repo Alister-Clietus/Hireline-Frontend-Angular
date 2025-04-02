@@ -128,7 +128,7 @@ signupportal()
         this.tokenservice.setSubmit(item.isSubmitted)
         this.tokenservice.setUsername(item.username);
         this.tokenservice.setToken(item.token);
-
+        this.tokenservice.setGmail(this.sendemail);
         Swal.fire({
           toast: true,
           position: "top-end",
@@ -138,7 +138,9 @@ signupportal()
           title: "STUDENT PORTAL LOGGED IN",
         })
         this.sendemail=this.logindto.email
-        this.router.navigate([`./student/student-portal/${btoa(this.sendemail)}`], { skipLocationChange: true });
+        this.tokenservice.setGmail(this.sendemail);
+        console.log(this.tokenservice.getGmail())
+        this.router.navigate([`./student/student-portal/${btoa(this.tokenservice.getGmail())}`], { skipLocationChange: true });
       }
     },
     error=>

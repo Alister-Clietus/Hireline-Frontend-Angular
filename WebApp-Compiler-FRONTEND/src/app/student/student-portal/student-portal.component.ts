@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/service/http.service';
+import { TokenserviceService } from 'src/app/service/token.service';
 import Swal from 'sweetalert2'
 
 
@@ -13,7 +14,7 @@ export class StudentPortalComponent implements OnInit {
   selectedemailid: any;
   studentData: any = {}; // Property to hold the response data
 
-  constructor(private router: Router,private route: ActivatedRoute,private http:HttpService) 
+  constructor(private router: Router,private route: ActivatedRoute,private http:HttpService,private tokenservice: TokenserviceService) 
   {
     this.selectedemailid = window.atob(this.route.snapshot.paramMap.get('selectedemailid'));
    }
@@ -24,8 +25,9 @@ export class StudentPortalComponent implements OnInit {
   }
 
   getdata() {
-    const email = this.selectedemailid; // Use the decoded email from the route parameter
-    const url = `http://127.0.0.1:8085/register/getstudentportalbyemail/${email}`;
+    this.tokenservice.getGmail();
+    console.log(this.tokenservice.getGmail()) // Use the decoded email from the route parameter
+    const url = `http://127.0.0.1:8085/register/getstudentportalbyemail/${this.tokenservice.getGmail()}`;
     
     this.http.getbyurlOnly(url).subscribe(
       (item: any) => {
