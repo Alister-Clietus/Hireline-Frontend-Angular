@@ -41,7 +41,7 @@ export class SidebarComponent{
     this.router.navigate(['./supadmin/questionDetails'],{skipLocationChange:true});
   }
   openSettings() {
-    // Implementation to open settings
+    this.router.navigate(['./supadmin/settings'],{skipLocationChange:true});
   }
   logout() {
     this.logoutt.logoutt();

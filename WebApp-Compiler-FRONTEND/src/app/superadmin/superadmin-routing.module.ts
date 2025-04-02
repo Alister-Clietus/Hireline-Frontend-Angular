@@ -28,6 +28,7 @@ import { AddPRGQuestionComponent } from './add-prgquestion/add-prgquestion.compo
 import { AddMCQQuestionComponent } from './add-mcqquestion/add-mcqquestion.component';
 import { AuthGuard } from '../service/gurad/auth.guard';
 import { QuestionairComponent } from './questionair/questionair.component';
+import { SettingsComponent } from '../admin/settings/settings.component';
 
 
 
@@ -65,7 +66,10 @@ const routes: Routes =
   },
   {
     path:"mcq/:questionid",component:AddMCQQuestionComponent,canActivate: [AuthGuard] 
-  }
+  },
+
+  {path:"settings",component:SettingsComponent},
+
 
 ];
 

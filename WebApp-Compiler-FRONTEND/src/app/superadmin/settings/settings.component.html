@@ -1,0 +1,143 @@
+<app-sidebar></app-sidebar>
+
+<div class="rec">
+  
+</div>
+<div class="settings-container">
+  <h2>Settings</h2>
+  <div class="row">
+    <div class="col-md-6">
+       <!-- Theme Toggle -->
+       <div class="setting-item">
+        <label>Dark Mode</label>
+        <button (click)="toggleTheme()" class="toggle-btn">
+            {{ theme === 'light' ? 'Enable Dark Mode' : 'Enable Light Mode' }}
+        </button>
+      </div>     
+    </div>
+    <div class="col-md-6">
+      <!-- Language Selection -->
+      <div class="setting-item">
+        <label for="language">Language</label>
+        <select id="language" (change)="changeLanguage($event)">
+            <option *ngFor="let lang of languages" [value]="lang.code">
+                {{ lang.name }}
+            </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Color Theme Selection -->
+      <div class="setting-item">
+          <label>Color Theme</label>
+          <div class="color-options">
+              <button *ngFor="let color of colorThemes" [style.backgroundColor]="color.value" 
+                      (click)="changeColorScheme(color.value)" class="color-circle">
+              </button>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Font Size Selection -->
+        <div class="setting-item">
+            <label>Font Size: {{ fontSize }}px</label>
+            <input type="range" min="12" max="24" [value]="fontSize" (input)="changeFontSize($event)">
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+        <!-- Privacy -->
+        <div class="setting-item">
+          <label>Profile Visibility</label>
+          <button (click)="togglePrivacy()" class="toggle-btn">
+              {{ privacyPublic ? 'Public' : 'Private' }}
+          </button>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Date & Time Settings -->
+        <div class="setting-item">
+          <label>Time Zone</label>
+          <select [(ngModel)]="timeZone">
+              <option *ngFor="let tz of timeZones" [value]="tz">{{ tz }}</option>
+          </select>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+        <!-- Font Family Selection -->
+        <div class="setting-item">
+          <label>Font Family</label>
+          <select (change)="changeFontFamily($event)">
+              <option *ngFor="let font of fontFamilies" [value]="font.value">
+                  {{ font.name }}
+              </option>
+          </select>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Notifications -->
+        <div class="setting-item">
+          <label>Enable Notifications</label>
+          <input type="checkbox" [(ngModel)]="notificationsEnabled">
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="setting-item">
+        <label>Date Format</label>
+        <select [(ngModel)]="dateFormat">
+            <option *ngFor="let df of dateFormats" [value]="df">{{ df }}</option>
+        </select>
+    </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Auto Logout -->
+        <div class="setting-item">
+          <label>Auto Logout (minutes)</label>
+          <input type="number" [(ngModel)]="autoLogoutTime" min="5" max="60">
+        </div>
+    </div>
+  </div>
+  <!-- Additional Row 1 -->
+  <div class="row">
+    <div class="col-md-6">
+        <!-- Two-Factor Authentication -->
+        <div class="setting-item">
+          <label>Two-Factor Authentication</label>
+          <button (click)="toggleTwoFactorAuth()" class="toggle-btn">
+              {{ twoFactorAuthEnabled ? 'Disable' : 'Enable' }}
+          </button>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Data Backup -->
+        <div class="setting-item">
+          <label>Data Backup</label>
+          <button (click)="backupData()" class="toggle-btn">Backup Now</button>
+        </div>
+    </div>
+  </div>
+  <!-- Additional Row 2 -->
+  <div class="row">
+    <div class="col-md-6">
+        <!-- Account Deletion -->
+        <div class="setting-item">
+          <label>Delete Account</label>
+          <button (click)="deleteAccount()" class="toggle-btn danger">Delete</button>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Default Settings Reset -->
+        <div class="setting-item">
+          <label>Reset to Default</label>
+          <button (click)="resetSettings()" class="toggle-btn">Reset</button>
+        </div>
+    </div>
+  </div>
+</div>

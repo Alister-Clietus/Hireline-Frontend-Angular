@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-settings',
@@ -98,4 +98,5 @@ export class SettingsComponent
       alert('All settings have been reset to default.');
     }
   }
+
 }
