@@ -31,7 +31,8 @@ export class AddComponent implements OnInit {
     console.log(this.questiondto)
     this.httpservice.postdata("http://localhost:8086/question/add",this.questiondto).subscribe((item: any)=>
     {
-      if (item.body.toLowerCase() == "success") 
+      console.log(item.code)
+      if (item.code == "success") 
       {
         Swal.fire({
           background: "#2ecc71",
@@ -53,6 +54,18 @@ export class AddComponent implements OnInit {
       }
       else 
       {        
+
+        Swal.fire({
+          background: "#f3fa59",
+          color:"#fff",
+          toast: true,
+          position: "center",
+          showConfirmButton: false,
+          timer: 2000,
+          icon: "error",
+          title: "UnSuccessfully",
+          iconColor: "orange"
+        })  
 
         if (item.details) 
         {
