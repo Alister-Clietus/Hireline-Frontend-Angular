@@ -127,7 +127,7 @@ Extractoutput()
   this.codeData.testCases.testCase7 = this.prgmodel.testcase7;
   this.codeData.testCases.testCase8 = this.prgmodel.testcase8;
   this.codeData.testCases.testCase9 = this.prgmodel.testcase9;
-  this.codeData.testCases.testCase10 = this.prgmodel.testcase10; 
+  this.codeData.testCases.testCase10 = this.prgmodel.testcase10;
   this.httpservice.postdata("http://localhost:8086/admin/execute",this.codeData).subscribe((item: any)=>
   {
     if (item.response.passed == "YES") 

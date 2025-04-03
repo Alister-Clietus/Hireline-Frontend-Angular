@@ -13,13 +13,7 @@ export class ResumeCheckerComponent implements OnInit
 {
 
   clear() {
-    // this.file = null;
-    // this.resumeUrl = null; // Reset the resume URL
-    // const fileInput = document.getElementById('resumeUpload') as HTMLInputElement;
-    // if (fileInput) {
-    //   fileInput.value = ''; // Clear the file input
-    // }
-    console.log("Resume cleared");
+
   }
   resumeresponsedto: ResumeResponseDTO = new ResumeResponseDTO()
 
@@ -86,7 +80,7 @@ export class ResumeCheckerComponent implements OnInit
     this.httpservice.postdata<ResumeResponseDTO>('http://127.0.0.1:5002/upload', formData).subscribe(
       (response:any) => 
         {
-        this.score=(response.resume_score*10)-12
+        this.score=(response.resume_score*10)
         this.resumeresponsedto.section_scores=response.section_scores
         console.log(this.resumeresponsedto.section_scores)
         this.resumeresponsedto.suggestions=response.suggestions
