@@ -9,7 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class ChatComponent {
   userInput: string = '';
   chatHistory: { sender: string, message: string }[] = [];
-
+  responseArray: string[] = []; // To store the response array from the backend
+  initialButtons: string[] = ['Cybersecurity', 'Software Developer']; // Predefined buttons
   constructor(private http: HttpClient) {}
 
   sendMessage() {
@@ -22,10 +23,19 @@ export class ChatComponent {
         .subscribe(response => {
           // Add bot response to chat history
           this.chatHistory.push({ sender: 'bot', message: response.response });
+
+          // Update the response array if it exists
+          this.responseArray = response.response_array || [];
         });
 
       // Clear the input field
       this.userInput = '';
     }
+  }
+
+  // Handle button click
+  handleButtonClick(buttonMessage: string) {
+    this.userInput = buttonMessage; // Set the button content as the user input
+    this.sendMessage(); // Send the button content as a message
   }
 }

@@ -133,6 +133,7 @@ importPRGQuestions()
     })
   }
 }
+
 importStudentDetails() 
 {
   if (this.selectedFile) {
