@@ -10,7 +10,7 @@ export class ChatComponent {
   userInput: string = '';
   chatHistory: { sender: string, message: string }[] = [];
   responseArray: string[] = []; // To store the response array from the backend
-  initialButtons: string[] = ['Cybersecurity', 'Software Developer']; // Predefined buttons
+  initialButtons: string[] = ['Cybersecurity', 'SWE:Software Developer']; // Predefined buttons
   constructor(private http: HttpClient) {}
 
   sendMessage() {
